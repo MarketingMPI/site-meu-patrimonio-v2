@@ -1,0 +1,854 @@
+@font-face{font-family:Poppins;src:url('/assets/brand/poppins-400-latin.woff2') format('woff2');font-weight:400;font-display:swap}
+@font-face{font-family:Poppins;src:url('/assets/brand/poppins-500-latin.woff2') format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:Poppins;src:url('/assets/brand/poppins-600-latin.woff2') format('woff2');font-weight:600;font-display:swap}
+@font-face{font-family:Poppins;src:url('/assets/brand/poppins-700-latin.woff2') format('woff2');font-weight:700;font-display:swap}
+
+:root{--ink:#00503c;--green:#006226;--signal:oklch(60% .195 143);--paper:oklch(97% .008 125);--mist:oklch(94% .012 145);--line:oklch(86% .014 150);--dark:oklch(16% .024 160);--muted:oklch(48% .035 160);--soft:color-mix(in oklch,var(--ink) 7%,transparent);--shell:min(1380px,calc(100vw - 56px));--ease:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{margin:0;background:var(--paper);color:var(--ink);font-family:Poppins,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}body.menu-open{overflow:hidden}img{display:block;max-width:100%}button,input,select{font:inherit}button,a{-webkit-tap-highlight-color:transparent}a{color:inherit}.shell{width:var(--shell);margin-inline:auto}.section{padding-block:clamp(96px,10vw,150px)}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip-link{position:fixed;left:18px;top:12px;z-index:300;transform:translateY(-160%);padding:12px 16px;background:var(--ink);color:var(--paper)}.skip-link:focus{transform:none}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .75s var(--ease),transform .75s var(--ease)}.reveal.is-visible{opacity:1;transform:none}
+h1,h2,h3{margin:0;overflow-wrap:normal;word-break:normal}p{overflow-wrap:break-word}.kicker{margin:0;font-size:10px;font-weight:600;line-height:1.2;letter-spacing:.17em;text-transform:uppercase;color:var(--green)}.kicker-light{color:color-mix(in oklch,var(--paper) 68%,transparent)}
+.button{min-height:52px;display:inline-flex;align-items:center;justify-content:center;padding:15px 25px;border:1px solid var(--ink);border-radius:2px;background:var(--ink);color:var(--paper);font-size:13px;font-weight:600;text-decoration:none;cursor:pointer;transition:background .22s var(--ease),border-color .22s var(--ease),transform .22s var(--ease)}.button:hover{background:var(--green);border-color:var(--green);transform:translateY(-2px)}.button-small{min-height:44px;padding:11px 18px;font-size:12px}.button-ghost{background:transparent;color:var(--ink);border-color:var(--line)}.button-ghost:hover{background:var(--mist);color:var(--ink);border-color:var(--green)}.text-link{display:inline-flex;align-items:center;gap:12px;min-height:48px;font-size:13px;font-weight:600;text-decoration:none;border-bottom:1px solid color-mix(in oklch,var(--ink) 22%,transparent)}.text-link span{transition:transform .22s var(--ease)}.text-link:hover span{transform:translateY(3px)}
+.button:focus-visible,.text-link:focus-visible,.site-header a:focus-visible,.menu-toggle:focus-visible,.product-tabs button:focus-visible,.model-option:focus-visible,.model-chips button:focus-visible,.site-footer a:focus-visible{outline:2px solid var(--signal);outline-offset:4px}
+
+.site-header{position:fixed;inset:0 0 auto;z-index:100;border-bottom:1px solid transparent;transition:background .28s,border-color .28s}.site-header.is-scrolled,.site-header.is-open{background:color-mix(in oklch,var(--paper) 94%,transparent);border-color:var(--line);backdrop-filter:blur(14px)}.header-inner{width:var(--shell);height:76px;margin:auto;display:flex;align-items:center;gap:30px}.brand{width:142px;flex:none}.brand img{width:100%;max-height:62px;object-fit:contain;object-position:left center}.desktop-nav{display:flex;align-items:center;gap:26px;margin-left:auto}.desktop-nav a{font-size:12px;font-weight:500;text-decoration:none;color:color-mix(in oklch,var(--ink) 72%,transparent)}.desktop-nav a:hover{color:var(--ink)}.desktop-cta{margin-left:8px}.menu-toggle{display:none;width:48px;height:48px;padding:12px;border:1px solid var(--line);background:transparent}.menu-toggle>span:not(.sr-only){display:block;width:100%;height:1px;margin:5px 0;background:var(--ink)}.mobile-menu{position:absolute;top:76px;left:0;right:0;padding:8px 24px 28px;background:var(--paper);border-bottom:1px solid var(--line)}.mobile-menu a{display:block;min-height:54px;padding:17px 0;border-bottom:1px solid var(--line);font-size:15px;text-decoration:none}
+
+.hero{min-height:100svh;padding-top:76px;background:var(--paper)}.hero-inner{min-height:calc(100svh - 76px);display:grid;grid-template-rows:auto 1fr auto}.hero-rule{display:flex;justify-content:space-between;padding-top:38px;border-top:1px solid var(--line);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}.hero-copy{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(300px,.5fr);align-items:end;gap:8vw;padding-block:clamp(70px,8.5vw,124px)}.hero h1{max-width:980px;font-size:clamp(54px,6.2vw,94px);font-weight:600;line-height:.98;letter-spacing:-.055em}.hero-marker{position:relative;z-index:0;display:inline-block;isolation:isolate;white-space:nowrap}.hero-marker::before{content:"";position:absolute;left:-.025em;right:-.065em;bottom:.035em;z-index:-1;height:.31em;background:var(--signal);opacity:.9;transform:rotate(-.8deg) skewX(-8deg) scaleX(0);transform-origin:left center;transition:transform .8s .32s var(--ease)}.hero-copy.is-visible .hero-marker::before{transform:rotate(-.8deg) skewX(-8deg) scaleX(1)}.hero-support{align-self:end;padding-bottom:8px}.hero-support>p{max-width:440px;margin:0;font-size:16px;line-height:1.65;color:color-mix(in oklch,var(--ink) 70%,transparent)}.hero-support>div{display:flex;flex-wrap:wrap;align-items:center;gap:22px;margin-top:30px}.hero-index{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}.hero-index>div{min-height:108px;display:grid;grid-template-columns:34px 1fr;grid-template-rows:auto auto;align-content:center;padding:22px 26px;border-right:1px solid var(--line)}.hero-index>div:last-child{border-right:0}.hero-index span{grid-row:1/3;font-size:10px;color:var(--signal)}.hero-index strong{font-size:14px;font-weight:600}.hero-index small{font-size:10px;color:var(--muted)}
+
+.model{background:var(--mist)}.model-heading{display:grid;grid-template-columns:.55fr 1.25fr .65fr;align-items:end;gap:44px}.model-heading h2{font-size:clamp(44px,5.1vw,74px);font-weight:600;line-height:1;letter-spacing:-.05em}.model-heading>p:last-child{max-width:250px;margin:0 0 6px;font-size:16px;line-height:1.55;color:var(--muted)}.orbit-stage{position:relative;height:680px;margin-top:72px;border:1px solid color-mix(in oklch,var(--ink) 11%,transparent);background:color-mix(in oklch,var(--paper) 70%,transparent);overflow:hidden}.orbit-stage::before,.orbit-stage::after{content:"";position:absolute;left:50%;top:50%;background:color-mix(in oklch,var(--ink) 9%,transparent);transform:translate(-50%,-50%)}.orbit-stage::before{width:78%;height:1px}.orbit-stage::after{width:1px;height:78%}.orbit-ring{position:absolute;left:50%;top:50%;border:1px solid color-mix(in oklch,var(--ink) 12%,transparent);border-radius:50%;transform:translate(-50%,-50%)}.orbit-ring-one{width:310px;height:310px}.orbit-ring-two{width:590px;height:430px}.orbit-ring-three{width:940px;height:580px}.client-center{position:absolute;left:50%;top:50%;z-index:5;width:210px;height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:50%;background:var(--paper);border:1px solid var(--green);box-shadow:0 0 0 14px color-mix(in oklch,var(--paper) 88%,transparent);transform:translate(-50%,-50%)}.client-center span,.client-center small{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.client-center strong{margin:5px 0;font-size:38px;font-weight:600;letter-spacing:-.05em}.institution{position:absolute;z-index:4;width:126px;height:60px;display:flex;align-items:center;justify-content:center;padding:12px 16px;border:1px solid color-mix(in oklch,var(--ink) 10%,transparent);background:color-mix(in oklch,var(--paper) 94%,transparent)}.institution img{max-width:84px;max-height:28px;object-fit:contain;filter:grayscale(1);opacity:.7}.institution.i01{width:126px;height:60px;padding:12px 16px}.institution.i01 img{max-width:34px;max-height:34px}.institution.wordmark{font-size:11px;font-weight:500;white-space:nowrap;color:color-mix(in oklch,var(--ink) 64%,transparent)}.i01{left:48%;top:3%}.i02{left:23%;top:11%}.i03{right:18%;top:13%}.i04{right:4%;top:42%}.i05{right:18%;bottom:12%}.i06{left:45%;bottom:2%}.i07{left:18%;bottom:12%}.i08{left:3%;top:44%}.i09{right:2%;top:21%}.i10{left:2%;top:21%}.i11{right:4%;bottom:28%}.i12{left:12%;bottom:30%}.i13{right:29%;top:28%}.i14{left:28%;top:29%}.i15{left:44%;bottom:25%}.model-note{margin:18px 0 0;text-align:center;font-size:10px;line-height:1.5;color:var(--muted)}
+
+.technology{background:var(--dark);color:var(--paper)}.technology-layout{display:grid;grid-template-columns:320px minmax(0,1fr);gap:clamp(60px,8vw,120px);align-items:start}.technology-heading{position:sticky;top:116px}.technology-heading h2{margin-top:26px;font-size:clamp(38px,4vw,56px);font-weight:600;line-height:1.03;letter-spacing:-.045em}.product-tabs{margin-top:56px;border-top:1px solid color-mix(in oklch,var(--paper) 14%,transparent)}.product-tabs button{width:100%;display:grid;grid-template-columns:28px 1fr auto;align-items:center;gap:12px;min-height:72px;padding:13px 0;border:0;border-bottom:1px solid color-mix(in oklch,var(--paper) 14%,transparent);background:transparent;color:color-mix(in oklch,var(--paper) 48%,transparent);text-align:left;cursor:pointer}.product-tabs button span{font-size:9px}.product-tabs button strong{font-size:14px;font-weight:500}.product-tabs button small{font-size:9px;letter-spacing:.1em;text-transform:uppercase}.product-tabs button[aria-selected=true]{color:var(--paper)}.product-tabs button[aria-selected=true] span{color:var(--signal)}.technology-stage{min-width:0}.product-panel[hidden]{display:none}.product-panel{animation:productIn .45s var(--ease) both}.product-copy{display:grid;grid-template-columns:90px 1fr;gap:18px 34px;margin-bottom:34px}.product-copy>span{grid-row:1/3;padding-top:8px;font-size:10px;font-weight:600;letter-spacing:.14em;color:var(--signal)}.product-copy h3{font-size:clamp(32px,3.5vw,52px);font-weight:600;line-height:1.02;letter-spacing:-.045em}.product-copy p{max-width:520px;margin:0;font-size:14px;line-height:1.65;color:color-mix(in oklch,var(--paper) 55%,transparent)}.browser-frame{position:relative;border:1px solid color-mix(in oklch,var(--paper) 18%,transparent);border-radius:13px;background:oklch(12% .012 160);box-shadow:0 32px 90px color-mix(in oklch,var(--dark) 70%,transparent);overflow:hidden}.frame-bar{height:38px;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid color-mix(in oklch,var(--paper) 10%,transparent)}.frame-bar i{width:6px;height:6px;border-radius:50%;background:color-mix(in oklch,var(--paper) 28%,transparent)}.frame-bar span{margin-left:8px;font-size:8px;color:color-mix(in oklch,var(--paper) 32%,transparent)}.browser-frame>img:not(.course-float){width:100%;aspect-ratio:1.76;object-fit:cover;object-position:left top}.screen-strip{width:64%;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:-12px 0 0 auto;position:relative;z-index:2;opacity:.52}.screen-strip img{aspect-ratio:1.6;object-fit:cover;object-position:left top;border:0;box-shadow:none}.pro-frame{overflow:visible}.pro-frame>img:not(.course-float){border-radius:0 0 13px 13px}.course-float{position:absolute;right:-4%;bottom:-10%;width:46%;border:1px solid color-mix(in oklch,var(--paper) 20%,transparent);box-shadow:0 22px 55px color-mix(in oklch,var(--dark) 76%,transparent)}.plan-frame{min-height:570px;display:grid;place-items:center;padding:50px;background:color-mix(in oklch,var(--paper) 96%,transparent);border-radius:13px}.plan-frame img{width:100%;max-height:500px;object-fit:contain}@keyframes productIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.leadership{background:var(--paper)}.leadership-heading{display:grid;grid-template-columns:.55fr 1.45fr;gap:50px;align-items:start;margin-bottom:62px}.leadership-heading h2{max-width:820px;font-size:clamp(44px,5.1vw,74px);font-weight:600;line-height:1;letter-spacing:-.05em}.founder-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,64px)}.founder{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(210px,.7fr);align-items:end}.founder figure{height:550px;margin:0;overflow:hidden;background:var(--mist)}.founder figure img{width:100%;height:100%;object-fit:cover;object-position:center top}.founder>div{position:relative;margin:0 0 38px -32px;padding:28px;background:var(--paper);border-top:1px solid var(--green)}.founder>div span{font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.founder h3{margin-top:26px;font-size:28px;font-weight:600;letter-spacing:-.035em}.founder p{margin:10px 0 0;font-size:12px;line-height:1.65;color:var(--muted)}
+
+.partners{background:var(--green);color:var(--paper)}.partners-layout{display:block}.partners-heading{display:grid;grid-template-columns:.52fr 1.18fr .7fr;align-items:end;gap:44px}.partners-heading h2{font-size:clamp(44px,5vw,72px);font-weight:600;line-height:1;letter-spacing:-.05em}.partners-heading>p:last-child{max-width:420px;margin:0 0 5px;font-size:14px;line-height:1.65;color:color-mix(in oklch,var(--paper) 66%,transparent)}.partner-videos{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:62px;background:color-mix(in oklch,var(--paper) 24%,transparent);border-block:1px solid color-mix(in oklch,var(--paper) 24%,transparent)}.video-testimonial{min-width:0;padding:18px;background:var(--green)}.video-frame{position:relative;aspect-ratio:16/9;background:var(--dark);overflow:hidden}.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.video-testimonial footer{display:flex;align-items:end;justify-content:space-between;gap:24px;padding:22px 4px 4px}.video-testimonial footer div{display:grid;gap:4px}.video-testimonial footer strong{font-size:13px;font-weight:600}.video-testimonial footer span{font-size:9px;color:color-mix(in oklch,var(--paper) 56%,transparent)}.video-testimonial footer a{min-height:44px;display:flex;align-items:center;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:color-mix(in oklch,var(--paper) 72%,transparent)}.video-testimonial footer a:hover{color:var(--paper)}
+
+.process{padding-block:82px;background:var(--mist)}.process-layout{display:grid;grid-template-columns:.72fr 1.28fr;gap:70px;align-items:start}.process-heading h2{max-width:530px;margin-top:24px;font-size:clamp(36px,4vw,56px);font-weight:600;line-height:1.03;letter-spacing:-.045em}.process-line{display:grid;grid-template-columns:repeat(4,1fr);margin:0;padding:0;border-top:1px solid var(--line);list-style:none}.process-line li{min-height:150px;padding:22px 18px;border-right:1px solid var(--line)}.process-line li:last-child{border-right:0}.process-line span{display:block;font-size:9px;color:var(--signal)}.process-line strong{display:block;margin-top:34px;font-size:13px;font-weight:600}.process-line small{display:block;margin-top:7px;font-size:9px;line-height:1.45;color:var(--muted)}
+
+/* V4.2 — "Onde estamos": mapa do Brasil interativo, replicado da home MP.
+   SVG externo (assets/reach/br-map.svg, 27 UFs, viewBox 1000x912). Estados com
+   presença ganham .on e acendem no hover; marcadores (sede/escritório/consultor)
+   e tooltip são montados por v3.js. Cores da marca: sinal #00a611, mint #61ce70. */
+.reach{background:var(--paper)}
+.reach-layout{display:grid;justify-items:center;gap:clamp(40px,5vw,60px)}
+.reach-heading{max-width:760px;text-align:center}
+.reach-heading h2{margin-top:22px;font-size:clamp(36px,4.4vw,60px);font-weight:600;line-height:1.02;letter-spacing:-.045em}
+.reach-heading>p:last-child{max-width:600px;margin:22px auto 0;font-size:16px;line-height:1.6;color:color-mix(in oklch,var(--ink) 66%,transparent)}
+.reach-map{position:relative;margin:0 auto;width:100%;max-width:620px}
+.reach-svg svg{width:100%;height:auto;display:block;margin:0 auto;color:color-mix(in oklch,var(--ink) 8%,var(--mist))}
+.reach-svg .uf{fill:color-mix(in oklch,var(--ink) 7%,var(--mist));stroke:#fff;stroke-width:.6;transition:fill .25s var(--ease)}
+.reach-svg .uf.on{fill:color-mix(in oklch,var(--ink) 26%,var(--paper));cursor:pointer}
+.reach-svg .uf.on:hover{fill:var(--ink)}
+.reach-markers .mk{cursor:pointer;transition:transform .2s var(--ease),filter .2s var(--ease);transform-box:fill-box;transform-origin:center}
+.reach-markers .mk:hover{filter:brightness(1.1)}
+.reach-markers .mk-sede{fill:#00a611;stroke:#fff;stroke-width:2.5;animation:reach-pulse 2.4s var(--ease) infinite}
+.reach-markers .mk-esc{fill:var(--ink);stroke:#fff;stroke-width:1.6}
+.reach-markers .mk-con{fill:#61ce70;stroke:#fff;stroke-width:1.4}
+@keyframes reach-pulse{0%,100%{opacity:1}50%{opacity:.55}}
+@media(prefers-reduced-motion:reduce){.reach-markers .mk-sede{animation:none}}
+.reach-tip{position:absolute;z-index:5;pointer-events:none;transform:translate(-50%,-140%);padding:6px 11px;border-radius:6px;background:var(--dark);color:var(--paper);font-size:12px;font-weight:500;white-space:nowrap;box-shadow:0 6px 20px color-mix(in oklch,var(--dark) 22%,transparent)}
+.reach-tip::after{content:"";position:absolute;left:50%;top:100%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--dark)}
+.reach-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:24px;margin-top:20px;padding-top:22px;width:100%;max-width:620px;border-top:1px solid var(--line)}
+.reach-legend .lg{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:color-mix(in oklch,var(--ink) 74%,transparent);font-weight:600}
+.reach-legend .lg i{width:12px;height:12px;display:inline-block}
+.reach-legend .lg-sede i{background:#00a611;border-radius:50%}
+.reach-legend .lg-esc i{width:0;height:0;background:none;border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:11px solid var(--ink)}
+.reach-legend .lg-con i{background:#61ce70;border-radius:50%}
+
+.conversion{background:var(--dark);color:var(--paper)}.conversion-layout{display:grid;grid-template-columns:minmax(0,.92fr) minmax(460px,1.08fr);gap:clamp(70px,9vw,140px);align-items:start}.conversion-copy{position:sticky;top:112px}.conversion-copy h2{max-width:620px;margin-top:26px;font-size:clamp(48px,5.5vw,78px);font-weight:600;line-height:.98;letter-spacing:-.052em}.conversion-copy>p:nth-of-type(2){max-width:510px;margin:28px 0 0;font-size:14px;line-height:1.7;color:color-mix(in oklch,var(--paper) 58%,transparent)}.model-options{margin-top:40px;border-top:1px solid color-mix(in oklch,var(--paper) 17%,transparent)}.model-option{width:100%;min-height:76px;display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:14px;padding:12px 0;border:0;border-bottom:1px solid color-mix(in oklch,var(--paper) 17%,transparent);background:transparent;color:color-mix(in oklch,var(--paper) 55%,transparent);text-align:left;cursor:pointer}.model-option>span{font-size:9px}.model-option>div{display:grid}.model-option small{font-size:9px;letter-spacing:.08em;text-transform:uppercase}.model-option strong{margin-top:4px;font-size:16px;font-weight:500}.model-option i{font-style:normal}.model-option.is-selected{color:var(--paper)}.model-option.is-selected>span,.model-option.is-selected i{color:var(--signal)}.conversion-steps{display:flex;gap:28px;margin:34px 0 0;padding:0;list-style:none}.conversion-steps li{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:color-mix(in oklch,var(--paper) 30%,transparent)}.conversion-steps li.is-active{color:var(--paper)}
+.application-form{min-height:590px;padding:38px 42px;background:var(--paper);color:var(--ink)}.form-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}.form-header p{margin:0;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}.form-header>div{display:flex;gap:5px}.form-header i{width:28px;height:2px;background:var(--line)}.form-header i.is-active{background:var(--green)}.model-chips{display:grid;grid-template-columns:1fr 1fr;margin-bottom:24px}.model-chips button{min-height:46px;border:1px solid var(--line);background:transparent;color:var(--ink);font-size:12px;cursor:pointer}.model-chips button+button{border-left:0}.model-chips button.is-selected{background:var(--green);border-color:var(--green);color:var(--paper)}.form-step{display:flex;flex-direction:column;gap:16px}.form-step[hidden],.form-success[hidden]{display:none}.form-step label{display:flex;flex-direction:column;gap:7px}.form-step label>span{font-size:11px;font-weight:500;color:color-mix(in oklch,var(--ink) 72%,transparent)}.form-step input,.form-step select{width:100%;min-height:50px;padding:13px 14px;border:1px solid var(--line);border-radius:2px;background:var(--paper);color:var(--ink);font-size:14px}.form-step input:focus-visible,.form-step select:focus-visible{outline:2px solid var(--signal);outline-offset:2px;border-color:var(--green)}.field-row{display:grid;grid-template-columns:1fr 110px;gap:12px}.form-error{padding:11px 13px;border:1px solid oklch(63% .11 25);color:oklch(43% .13 25);font-size:12px}.form-next{width:100%;margin-top:4px}.form-actions{display:grid;grid-template-columns:auto 1fr;gap:10px}.form-success{min-height:450px;display:flex;flex-direction:column;justify-content:center}.form-success>span{width:46px;height:46px;display:grid;place-items:center;border-radius:50%;background:var(--signal);font-weight:700}.form-success h3{margin-top:25px;font-size:28px}.form-success p{max-width:420px;margin:14px 0 0;font-size:14px;line-height:1.65;color:var(--muted)}
+
+.site-footer{padding:36px 0;background:var(--paper);border-top:1px solid var(--line)}.footer-inner{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:45px}.footer-inner img{width:135px}.footer-inner p{margin:0;font-size:10px;color:var(--muted)}.footer-inner a{font-size:10px;font-weight:600;text-decoration:none}.mobile-cta{display:none}
+
+@media(max-width:1100px){.desktop-nav{display:none}.menu-toggle{display:block;margin-left:auto}.desktop-cta{margin-left:0}.hero-copy{grid-template-columns:1fr;gap:40px}.hero-support{display:grid;grid-template-columns:1fr 1fr;gap:30px}.hero-support>div{margin-top:0}.model-heading{grid-template-columns:1fr 1.4fr}.model-heading>p:last-child{grid-column:2}.orbit-ring-three{width:88%}.technology-layout{grid-template-columns:1fr}.technology-heading{position:static;display:grid;grid-template-columns:1fr 1fr;gap:40px}.technology-heading .kicker{grid-column:1/-1}.product-tabs{margin-top:0}.leadership-heading{grid-template-columns:1fr 1.4fr}.founder{grid-template-columns:1fr}.founder>div{margin:-55px 18px 0}.partners-layout,.process-layout{grid-template-columns:1fr}.partners-heading>p:last-child{max-width:620px}.conversion-layout{grid-template-columns:1fr}.conversion-copy{position:static}.model-options{display:grid;grid-template-columns:1fr 1fr}.model-option:first-child{border-right:1px solid color-mix(in oklch,var(--paper) 17%,transparent);padding-right:24px}.model-option:last-child{padding-left:24px}.application-form{max-width:760px;width:100%;margin-inline:auto}}
+
+@media(max-width:760px){:root{--shell:calc(100vw - 36px)}html{scroll-padding-top:72px}.section{padding-block:78px}.header-inner{height:70px}.brand{width:118px}.desktop-cta{display:none}.mobile-menu{top:70px}.hero{padding-top:70px;min-height:auto}.hero-inner{min-height:auto}.hero-rule{padding-top:26px}.hero-copy{padding-block:72px 58px}.hero h1{font-size:clamp(42px,11.6vw,54px);line-height:1}.hero-support{grid-template-columns:1fr;gap:26px}.hero-support>p{font-size:15px}.hero-support>div{align-items:flex-start;flex-direction:column;gap:10px}.hero-support .button{width:100%}.hero-index{grid-template-columns:1fr}.hero-index>div{min-height:82px;border-right:0;border-bottom:1px solid var(--line);padding:18px 4px}.hero-index>div:last-child{border-bottom:0}
+  .model-heading{grid-template-columns:1fr;gap:24px}.model-heading h2{font-size:clamp(38px,10.5vw,48px)}.model-heading>p:last-child{grid-column:auto;margin:0}.orbit-stage{height:auto;margin:50px -18px 0;padding:42px 18px 28px;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;border-left:0;border-right:0}.orbit-stage::before,.orbit-stage::after,.orbit-ring{display:none}.client-center{position:relative;left:auto;top:auto;width:230px;height:230px;margin:0 calc((100% - 230px)/2) 28px;transform:none;flex:none}.client-center strong{font-size:34px}.institution{position:relative;inset:auto!important;width:122px;height:54px;margin:4px;padding:10px 13px}.institution.i01{width:122px;height:54px}.institution img{max-width:76px;max-height:24px}.institution.i01 img{max-width:30px;max-height:30px}.institution.wordmark{font-size:10px}.model-note{text-align:left}
+  .technology-layout{gap:48px}.technology-heading{display:block}.technology-heading h2{font-size:clamp(36px,10vw,46px)}.product-tabs{margin-top:38px}.product-tabs button{min-height:64px}.product-copy{grid-template-columns:1fr;gap:10px;margin-bottom:26px}.product-copy>span{grid-row:auto}.product-copy h3{font-size:34px}.browser-frame{margin-inline:-8px}.screen-strip{width:94%;gap:6px}.course-float{right:-1%;bottom:-8%;width:54%}.plan-frame{min-height:390px;margin-inline:-8px;padding:24px 6px}
+  .leadership-heading{grid-template-columns:1fr;gap:24px;margin-bottom:42px}.leadership-heading h2{font-size:clamp(38px,10.2vw,48px)}.founder-grid{grid-template-columns:1fr;gap:48px}.founder figure{height:500px}.founder>div{margin:-62px 16px 0;padding:22px}.founder h3{font-size:25px}
+  .partners-heading{grid-template-columns:1fr;gap:24px}.partners-heading h2{font-size:clamp(40px,10.5vw,50px)}.partners-heading>p:last-child{margin:0}.partner-videos{grid-template-columns:1fr;margin:42px -18px 0}.video-testimonial{padding:14px}.video-testimonial footer{padding:18px 2px 6px}.video-testimonial footer a{letter-spacing:.04em}
+  .process{padding-block:70px}.process-layout{gap:42px}.process-heading h2{font-size:clamp(32px,8.7vw,40px)}.process-line{grid-template-columns:1fr 1fr}.process-line li:nth-child(2){border-right:0}.process-line li{min-height:130px}.process-line li:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .conversion-copy h2{font-size:clamp(42px,11vw,54px)}.model-options{grid-template-columns:1fr}.model-option:first-child{border-right:0;padding-right:0}.model-option:last-child{padding-left:0}.conversion-steps{gap:18px}.application-form{min-height:600px;padding:27px 20px}.field-row{grid-template-columns:1fr 90px}.form-actions{grid-template-columns:1fr}.footer-inner{grid-template-columns:1fr;gap:20px}.site-footer{padding-bottom:92px}.mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:90;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 15px;background:color-mix(in oklch,var(--dark) 96%,transparent);color:var(--paper);border-top:1px solid color-mix(in oklch,var(--paper) 13%,transparent);backdrop-filter:blur(12px)}.mobile-cta>div{display:grid}.mobile-cta strong{font-size:11px}.mobile-cta span{font-size:8px;color:color-mix(in oklch,var(--paper) 48%,transparent)}.mobile-cta a{min-height:46px;display:flex;align-items:center;padding:0 14px;background:var(--signal);color:var(--ink);font-size:11px;font-weight:700;text-decoration:none}}
+
+@media(max-width:390px){:root{--shell:calc(100vw - 28px)}.hero h1{font-size:clamp(39px,10.8vw,46px)}.orbit-stage{margin-inline:-14px}.client-center{width:214px;height:214px;margin-left:calc((100% - 214px)/2);margin-right:calc((100% - 214px)/2)}.institution{width:116px}.institution.i01{width:116px}.application-form{padding-inline:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.button,.product-panel{transition:none;animation:none}.button:hover{transform:none}.hero-marker::before{transition:none;transform:rotate(-.8deg) skewX(-8deg) scaleX(1)}}
+
+/* V3.1 — ecossistema multi-plataforma e telas atuais do Meu Plano */
+@keyframes mp-spin-cw{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes mp-spin-ccw{from{transform:rotate(0)}to{transform:rotate(-360deg)}}
+@keyframes mp-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.035)}}
+
+.mp-parallax{
+  position:relative;
+  min-height:760px;
+  margin-top:72px;
+  display:grid;
+  place-items:center;
+  overflow:hidden;
+  border-block:1px solid color-mix(in oklch,var(--ink) 10%,transparent);
+  background:
+    radial-gradient(circle at 50% 52%,color-mix(in oklch,var(--green) 7%,transparent),transparent 34%),
+    color-mix(in oklch,var(--paper) 64%,transparent);
+}
+.mp-orbit-desktop{position:relative;width:min(780px,78vw);aspect-ratio:1;font-size:min(8.65px,.865vw)}
+.mp-field{position:absolute;inset:0;transform:translate3d(calc(var(--mx,0) * 8px),calc(var(--my,0) * 8px),0);transition:transform .5s var(--ease)}
+.mp-layer{position:absolute;inset:0;will-change:transform,opacity}
+.mp-layer-outer{transform:scale(calc(.66 + .34 * var(--p,1)));opacity:calc(.06 + .94 * var(--p,1))}
+.mp-layer-middle{transform:scale(calc(.76 + .24 * var(--p,1)));opacity:calc(.06 + .94 * var(--p,1))}
+.mp-layer-inner{transform:scale(calc(.86 + .14 * var(--p,1)));opacity:calc(.06 + .94 * var(--p,1))}
+.mp-ring{position:absolute;left:50%;top:50%;border:1px solid color-mix(in oklch,var(--ink) 15%,transparent);border-radius:50%}
+.mp-layer-outer .mp-ring{width:80em;height:80em;margin:-40em 0 0 -40em}
+.mp-layer-middle .mp-ring{width:61em;height:61em;margin:-30.5em 0 0 -30.5em}
+.mp-layer-inner .mp-ring{width:42em;height:42em;margin:-21em 0 0 -21em}
+.mp-rotor{position:absolute;inset:0;will-change:transform}
+.mp-spin-cw{animation:mp-spin-cw calc(132s / var(--sp,1)) linear infinite}
+.mp-spin-ccw{animation:mp-spin-ccw calc(132s / var(--sp,1)) linear infinite}
+.mp-speed-middle{animation-duration:calc(104s / var(--sp,1))}
+.mp-speed-inner{animation-duration:calc(78s / var(--sp,1))}
+.mp-orbit-item{position:absolute;left:50%;top:50%;width:15em;height:5.2em;margin:-2.6em 0 0 -7.5em;transform:rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)))}
+.mp-counter{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.mp-counter img{width:auto;max-width:11.5em;max-height:3.6em;object-fit:contain;filter:grayscale(1);opacity:.74}
+.mp-counter img.logo-square{max-width:4.1em;max-height:4.1em;border-radius:.72em}
+.mp-layer-outer .mp-counter img{max-width:10.8em;max-height:3.1em;opacity:.64}
+.mp-layer-inner .mp-counter img{max-width:12.2em;max-height:4.1em;opacity:.82}
+.mp-layer .mp-counter img[alt="Inter"]{max-width:6.6em;max-height:3.1em}
+.mp-layer .mp-counter img[alt="Safra"]{max-width:9em}
+.mp-layer .mp-counter img[alt="Bradesco"]{max-width:9em}
+.mp-layer .mp-counter img[alt="C6 Bank"]{max-width:9.4em}
+.mp-layer .mp-counter img[alt="Nomad"]{max-width:9.6em}
+.mp-layer .mp-counter img[alt="Avenue"]{max-width:9.8em;max-height:2.7em}
+.mp-core-halo{position:absolute;left:50%;top:50%;width:34em;height:34em;margin:-17em 0 0 -17em;border-radius:50%;background:radial-gradient(circle,color-mix(in oklch,var(--green) 9%,transparent),transparent 68%);transform:scale(calc(.9 + .1 * var(--p,1)))}
+.mp-core{position:absolute;left:50%;top:50%;z-index:4;width:16.2em;height:16.2em;margin:-8.1em 0 0 -8.1em;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.05em;border-radius:50%;background:var(--ink);box-shadow:0 1.4em 4em color-mix(in oklch,var(--ink) 20%,transparent);animation:mp-breathe 9s ease-in-out infinite}
+.mp-core img{height:7.3em;width:auto}
+.mp-core span{font-size:1.05em;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in oklch,var(--paper) 84%,transparent)}
+.mp-orbit-mobile{display:none}
+.additional-institutions{display:grid;grid-template-columns:repeat(6,1fr);margin-top:-1px;border:1px solid color-mix(in oklch,var(--ink) 10%,transparent)}
+.additional-institutions span{min-height:62px;display:grid;place-items:center;padding:12px;border-right:1px solid color-mix(in oklch,var(--ink) 10%,transparent);font-size:10px;font-weight:500;letter-spacing:.02em;text-align:center;color:color-mix(in oklch,var(--ink) 58%,transparent)}
+.additional-institutions span:last-child{border-right:0}
+
+.plan-device-stage{min-height:630px;display:grid;grid-template-columns:.86fr 1.08fr .86fr;align-items:end;gap:clamp(12px,2.2vw,28px);padding:52px clamp(18px,3vw,42px) 0;border:1px solid color-mix(in oklch,var(--paper) 15%,transparent);border-radius:13px;background:radial-gradient(circle at 50% 42%,oklch(24% .035 160),oklch(11% .014 160) 72%);overflow:hidden}
+.plan-device{position:relative;margin:0;filter:drop-shadow(0 28px 38px color-mix(in oklch,var(--dark) 72%,transparent));transform-origin:50% 100%}
+.plan-device img{width:100%;height:auto;border-radius:clamp(13px,1.6vw,22px) clamp(13px,1.6vw,22px) 0 0;border:1px solid color-mix(in oklch,var(--paper) 20%,transparent);border-bottom:0}
+.plan-device figcaption{position:absolute;left:50%;top:-34px;transform:translateX(-50%);font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:color-mix(in oklch,var(--paper) 56%,transparent)}
+.plan-device-primary{z-index:2}
+.plan-device-secondary{opacity:.66;transform:translateY(44px) scale(.94)}
+
+@media(max-width:1100px){
+  .mp-parallax{min-height:700px}
+  .mp-orbit-desktop{width:min(720px,88vw);font-size:min(8px,.98vw)}
+  .plan-device-stage{min-height:580px}
+}
+
+@media(max-width:760px){
+  .mp-parallax{min-height:0;margin:48px -18px 0;padding:34px 18px 20px;border-inline:0;background:color-mix(in oklch,var(--paper) 62%,transparent)}
+  .mp-orbit-desktop{display:none}
+  .mp-orbit-mobile{display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%}
+  .mp-mobile-core{grid-column:1/-1;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;margin-bottom:14px;border-radius:2px;background:var(--ink)}
+  .mp-mobile-core img{width:auto;height:82px}
+  .mp-mobile-core span{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:color-mix(in oklch,var(--paper) 76%,transparent)}
+  .mp-orbit-mobile>img{width:100%;height:70px;padding:20px 24px;object-fit:contain;filter:grayscale(1);opacity:.78;border:1px solid color-mix(in oklch,var(--ink) 10%,transparent);background:color-mix(in oklch,var(--paper) 86%,transparent)}
+  .mp-orbit-mobile>.mp-mobile-wide{grid-column:1/-1}
+  .additional-institutions{grid-template-columns:repeat(2,1fr);margin-inline:-18px;border-inline:0}
+  .additional-institutions span:nth-child(2n){border-right:0}
+  .additional-institutions span{min-height:54px;border-bottom:1px solid color-mix(in oklch,var(--ink) 10%,transparent)}
+  .model-note{margin-top:16px}
+  .plan-device-stage{min-height:0;margin-inline:-8px;grid-template-columns:repeat(3,78%);align-items:end;gap:12px;padding:46px 12px 0;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+  .plan-device-stage::-webkit-scrollbar{display:none}
+  .plan-device{scroll-snap-align:center;filter:drop-shadow(0 18px 25px color-mix(in oklch,var(--dark) 70%,transparent))}
+  .plan-device-primary{grid-column:1;grid-row:1}
+  .plan-device-secondary{opacity:1;transform:none}
+  .plan-device-stage .plan-device:first-child{grid-column:2;grid-row:1}
+  .plan-device-stage .plan-device:last-child{grid-column:3;grid-row:1}
+  .plan-device img{border-radius:18px 18px 0 0}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .mp-field{transform:none;transition:none}
+  .mp-rotor,.mp-counter,.mp-core{animation:none!important}
+  .mp-layer{transform:none;opacity:1}
+}
+
+@media(max-width:390px){
+  .mp-parallax,.additional-institutions{margin-inline:-14px}
+}
+
+/* Candidatura V3.2 — dois fluxos, três etapas */
+.application-form{min-height:690px}
+.hp-field{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.choice-group{min-width:0;margin:0;padding:0;border:0}
+.choice-group legend{margin-bottom:10px;font-size:11px;font-weight:500;color:color-mix(in oklch,var(--ink) 72%,transparent)}
+.choice-group legend small{display:block;margin-top:3px;font-size:9px;font-weight:400;color:var(--muted)}
+.binary-choice,.certification-grid{display:grid;gap:8px}
+.binary-choice{grid-template-columns:1fr 1fr}
+.certification-grid{grid-template-columns:repeat(4,1fr)}
+.choice-group label{position:relative;display:block}
+.choice-group input{position:absolute;width:1px!important;height:1px!important;min-height:0!important;padding:0!important;opacity:0;pointer-events:none}
+.choice-group label span{min-height:44px;display:grid;place-items:center;padding:9px 10px;border:1px solid var(--line);background:transparent;font-size:10px;font-weight:500;text-align:center;cursor:pointer;transition:border-color .18s,background .18s,color .18s}
+.choice-group input:checked+span{border-color:var(--green);background:var(--green);color:var(--paper)}
+.choice-group input:focus-visible+span{outline:2px solid var(--signal);outline-offset:2px}
+.form-step [data-market-role].is-disabled{opacity:.42}
+.form-step [data-market-role].is-disabled select{pointer-events:none}
+.application-form.is-submitting{pointer-events:none}
+.application-form.is-submitting [data-submit]{opacity:.62}
+
+@media(max-width:760px){
+  .application-form{min-height:720px}
+  .certification-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+/* V3.3 — One Stop Wealth, marca e presença internacional */
+.wealth{position:relative;background:var(--paper);overflow:hidden}
+.wealth::before{content:"";position:absolute;right:-12vw;top:13%;width:46vw;aspect-ratio:1;border:1px solid color-mix(in oklch,var(--ink) 7%,transparent);border-radius:50%;box-shadow:0 0 0 9vw color-mix(in oklch,var(--ink) 2.5%,transparent),0 0 0 18vw color-mix(in oklch,var(--ink) 1.5%,transparent);pointer-events:none}
+.wealth-layout{position:relative;z-index:1}
+.wealth-heading{display:grid;grid-template-columns:.62fr 1.1fr .68fr;align-items:end;gap:44px}
+.wealth-heading h2{font-size:clamp(42px,5vw,72px);font-weight:600;line-height:1;letter-spacing:-.05em}
+.wealth-heading>p:last-child{max-width:390px;margin:0 0 5px;font-size:15px;line-height:1.65;color:color-mix(in oklch,var(--ink) 72%,transparent)}
+.wealth-wordmark{margin:0;font-weight:700;font-size:clamp(42px,5vw,72px);line-height:1;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:clamp(1px,.13vw,1.8px) color-mix(in oklch,var(--ink) 34%,transparent)}
+.wealth-wordmark span{display:block}
+.wealth-principles{display:grid;grid-template-columns:1fr 1fr;max-width:760px;margin:44px auto 0;border-block:1px solid var(--line)}
+.wealth-principles>div{display:grid;grid-template-columns:38px 1fr;grid-template-rows:auto auto;gap:5px 18px;min-height:116px;align-content:center;padding:22px 30px}
+.wealth-principles>div+div{border-left:1px solid var(--line)}
+.wealth-principles span{grid-row:1/3;font-size:9px;font-weight:600;color:var(--signal)}
+.wealth-principles strong{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.wealth-principles p{margin:0;font-size:13px;color:var(--muted)}
+.wealth-system{display:grid;grid-template-columns:minmax(300px,.72fr) minmax(0,1.28fr);min-height:570px;margin-top:62px;background:var(--forest);color:var(--paper);overflow:hidden}
+.wealth-core-copy{position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(38px,5vw,70px);overflow:hidden}
+.wealth-core-copy::before{content:"MP";position:absolute;left:-.05em;bottom:-.25em;font-size:clamp(220px,25vw,390px);font-weight:700;line-height:1;color:color-mix(in oklch,var(--paper) 4%,transparent);letter-spacing:-.12em}
+.wealth-core-copy>*{position:relative;z-index:1}
+.wealth-core-copy span{font-size:10px;font-weight:600;letter-spacing:.18em;color:var(--signal)}
+.wealth-core-copy strong{max-width:490px;margin-top:24px;font-size:clamp(26px,3vw,44px);font-weight:600;line-height:1.12;letter-spacing:-.04em}
+.wealth-core-copy small{max-width:420px;margin-top:24px;font-size:13px;line-height:1.65;color:color-mix(in oklch,var(--paper) 58%,transparent)}
+.tool-map{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(162px,1fr);background:color-mix(in oklch,var(--paper) 14%,transparent);gap:1px}
+.tool{min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;margin:0;padding:22px;background:var(--paper);color:var(--ink)}
+.tool img{width:auto;max-width:82%;max-height:68px;object-fit:contain}
+.tool figcaption{font-size:8px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tool-pro{grid-column:span 5}.tool-tv{grid-column:span 3}.tool-hub{grid-column:span 4}
+.tool-advisory{grid-column:span 4}.tool-360{grid-column:span 5}.tool-family{grid-column:span 3}
+.tool-plano{grid-column:span 4}.tool-fsc{grid-column:span 4}.tool-asc{grid-column:span 4}
+.tool-hub,.tool-fsc,.tool-asc{background:color-mix(in oklch,var(--paper) 93%,var(--mist))}
+.tool-hub img,.tool-fsc img,.tool-asc img{max-height:84px}
+.tool-family img{max-height:60px}
+/* A junção MP360 | Family Office cai numa fronteira de subpixel onde o gap de 1px da
+   grade some no arredondamento. Reforço a divisória com uma borda esquerda real, na
+   mesma cor do fundo do .tool-map, para a linha aparecer sempre. */
+.tool-family{border-left:1px solid color-mix(in oklch,var(--paper) 14%,transparent)}
+.tool-plano img{max-height:82px}
+
+.mp-mobile-square{object-fit:contain!important;padding-block:12px!important}
+.model-markets{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:18px}
+.model-markets img{width:82px;height:auto}
+.model-markets span{font-size:8px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.model-option{min-height:76px}
+.model-option>div{gap:0}
+.model-option strong{margin:0;font-size:16px;font-weight:600}
+
+.footer-inner{grid-template-columns:170px 1fr auto}
+.footer-inner .footer-brand{width:156px;max-height:72px;object-fit:contain;object-position:left center}
+
+@media(max-width:1100px){
+  .wealth-heading{grid-template-columns:1fr 1.5fr}.wealth-heading>p:last-child{grid-column:2}
+  .wealth-system{grid-template-columns:1fr}.wealth-core-copy{min-height:390px}
+  .footer-inner{grid-template-columns:160px 1fr auto}.footer-inner>a{grid-column:3}
+}
+
+@media(max-width:760px){
+  .wealth-heading{grid-template-columns:1fr;gap:24px}.wealth-heading h2{font-size:clamp(38px,10.5vw,48px)}.wealth-heading>p:last-child{grid-column:auto;margin:0}
+  .wealth-wordmark{font-size:clamp(44px,13vw,72px);color:color-mix(in oklch,var(--ink) 30%,transparent);-webkit-text-stroke:0}
+  .wealth-principles{grid-template-columns:1fr;margin:42px 0 0}.wealth-principles>div+div{border-left:0;border-top:1px solid var(--line)}
+  .wealth-system{margin:28px -18px 0}.wealth-core-copy{min-height:390px;padding:38px 28px}.wealth-core-copy strong{font-size:32px}
+  .tool-map{grid-template-columns:1fr 1fr;grid-auto-rows:142px}.tool{grid-column:auto!important;padding:18px 12px}.tool:last-child{grid-column:1/-1!important}.tool img{max-width:84%;max-height:58px}.tool-hub img,.tool-fsc img,.tool-asc img,.tool-plano img{max-height:66px}
+  .model-option{min-height:76px}
+  .footer-inner{grid-template-columns:1fr;gap:18px}.footer-inner>a{grid-column:auto}.footer-inner .footer-brand{width:165px}
+}
+
+@media(max-width:390px){.wealth-system,.partner-videos{margin-inline:-14px}}
+
+/* V3.4 — hero editorial e depoimentos em vídeo */
+.partners.section{padding-block:clamp(88px,8vw,118px)}
+.video-poster{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;background:var(--dark);cursor:pointer;overflow:hidden}
+.video-poster img{width:100%;height:100%;object-fit:cover;transition:transform .65s var(--ease),opacity .3s var(--ease)}
+.video-poster::after{content:"";position:absolute;inset:0;background:color-mix(in oklch,var(--dark) 16%,transparent);transition:background .3s var(--ease)}
+.video-play{position:absolute;left:50%;top:50%;z-index:2;width:68px;height:68px;display:grid;place-items:center;padding-left:4px;border-radius:50%;background:var(--signal);color:var(--ink);font-size:19px;box-shadow:0 16px 38px color-mix(in oklch,var(--dark) 34%,transparent);transform:translate(-50%,-50%);transition:transform .3s var(--ease),background .3s var(--ease)}
+.video-poster:hover img{transform:scale(1.025)}.video-poster:hover::after{background:transparent}.video-poster:hover .video-play{background:var(--paper);transform:translate(-50%,-50%) scale(1.06)}
+.video-poster:focus-visible{outline:3px solid var(--signal);outline-offset:-3px}.video-poster:focus-visible .video-play{background:var(--paper)}
+@media(max-width:760px){.hero-marker::before{left:0;right:0}}
+
+/* V3.5 — depoimentos verticais */
+.partners{background:var(--dark)}
+.partner-videos{max-width:1040px;grid-template-columns:repeat(2,minmax(300px,420px));justify-content:center;gap:clamp(36px,5vw,72px);margin:68px auto 0;background:transparent;border:0}
+.video-testimonial{padding:18px 18px 24px;border:1px solid color-mix(in oklch,var(--paper) 17%,transparent);border-radius:24px;background:color-mix(in oklch,var(--dark) 91%,var(--ink))}
+.video-frame{aspect-ratio:9/16;border-radius:18px}
+.video-poster img{object-position:center}
+.video-testimonial footer{justify-content:center;padding:28px 8px 3px;text-align:center}
+.video-testimonial footer div{gap:7px}.video-testimonial footer strong{font-size:22px;letter-spacing:-.025em}.video-testimonial footer span{font-size:13px;color:color-mix(in oklch,var(--paper) 72%,var(--signal))}
+@media(max-width:760px){.partner-videos{grid-template-columns:1fr;max-width:370px;gap:28px;margin:44px auto 0}.video-testimonial{padding:12px 12px 21px;border-radius:18px}.video-frame{border-radius:12px}.video-testimonial footer{padding:22px 6px 2px}.video-testimonial footer strong{font-size:20px}.video-testimonial footer span{font-size:12px}.video-play{width:60px;height:60px}}
+
+/* V3.6 — demonstração MP HUB */
+.hub-video-frame{background:oklch(9% .018 160)}
+.hub-product-video{display:block;width:100%;aspect-ratio:16/9;background:oklch(8% .014 160);object-fit:contain}
+
+/* V3.7 — mercado de consultoria, declaração de marca, plug and play e O Caminho da Verdade */
+
+/* Verde institucional da paleta MP nas seções de fundo fechado. É um token único:
+   reverter para a versão anterior é trocar --forest de volta por var(--dark). */
+:root{--forest:#00503c}
+.technology,.partners,.conversion,.statement{background:var(--forest)}
+/* O fundo subiu de ~16% para ~30% de luminância, então os textos secundários dessas
+   seções precisaram de mais opacidade para continuar acima de 4.5:1. */
+.product-tabs button{color:color-mix(in oklch,var(--paper) 60%,transparent)}
+.product-tabs,.product-tabs button{border-color:color-mix(in oklch,var(--paper) 22%,transparent)}
+.product-copy p{color:color-mix(in oklch,var(--paper) 74%,transparent)}
+.partners-heading>p:last-child{color:color-mix(in oklch,var(--paper) 78%,transparent)}
+.video-testimonial{border-color:color-mix(in oklch,var(--paper) 26%,transparent);background:color-mix(in oklch,var(--forest) 88%,var(--dark))}
+.conversion-copy>p:nth-of-type(2){color:color-mix(in oklch,var(--paper) 74%,transparent)}
+.conversion-steps li{color:color-mix(in oklch,var(--paper) 52%,transparent)}
+.model-option{color:color-mix(in oklch,var(--paper) 70%,transparent)}
+.model-options,.model-option{border-color:color-mix(in oklch,var(--paper) 24%,transparent)}
+
+/* Mercado de consultoria: comparativo EUA x Brasil e série histórica da CVM. */
+.market{background:var(--paper);border-top:1px solid var(--line)}
+/* Coluna larga para o título: a manchete tem duas linhas longas e o grid de três
+   colunas do .model-heading a quebrava em quatro. */
+.market-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(205px,.34fr);align-items:end;gap:18px 56px}
+.market-heading .kicker{grid-column:1/-1}
+.market-heading h2{grid-column:1;font-size:clamp(38px,4.1vw,58px);font-weight:600;line-height:1.03;letter-spacing:-.05em}
+.market-heading>p:last-child{grid-column:2;margin:0 0 6px;font-size:16px;line-height:1.55;color:var(--muted)}
+.market-compare{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(20px,4vw,64px);margin-top:clamp(46px,5vw,74px);padding:clamp(32px,3.6vw,52px) clamp(18px,3vw,44px);border:1px solid color-mix(in oklch,var(--ink) 11%,transparent);background:color-mix(in oklch,var(--mist) 60%,transparent)}
+.market-side{margin:0;display:grid;justify-items:center;gap:14px;text-align:center}
+.market-side img{width:clamp(84px,8.6vw,130px);height:auto;border-radius:3px;box-shadow:0 6px 20px color-mix(in oklch,var(--ink) 13%,transparent)}
+.market-side strong{font-size:clamp(48px,7vw,100px);font-weight:600;line-height:.9;letter-spacing:-.055em;font-variant-numeric:tabular-nums}
+.market-side figcaption{font-size:clamp(13px,1.15vw,16px);font-weight:500;color:color-mix(in oklch,var(--ink) 76%,transparent)}
+.market-versus{font-size:clamp(22px,2.5vw,38px);font-weight:600;color:color-mix(in oklch,var(--ink) 42%,transparent)}
+
+.cvm{margin:clamp(46px,5vw,74px) 0 0;padding:clamp(26px,3vw,42px) clamp(20px,2.6vw,40px) clamp(18px,2vw,26px);border:1px solid color-mix(in oklch,var(--ink) 11%,transparent);background:color-mix(in oklch,var(--paper) 86%,var(--mist))}
+.cvm-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;padding-bottom:18px;border-bottom:2px solid var(--ink)}
+.cvm-head strong{display:block;margin-top:12px;font-size:clamp(24px,2.7vw,40px);font-weight:600;line-height:1.04;letter-spacing:-.04em}
+.cvm-legend{display:grid;gap:9px;margin:0;padding:0 0 4px;list-style:none}
+.cvm-legend li{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:500;white-space:nowrap}
+.cvm-legend i{width:20px;height:11px;flex:none;background:var(--ink)}
+.cvm-legend i.cvm-jur{background:var(--green)}
+.cvm-scroll{overflow-x:auto;overscroll-behavior-x:contain}
+/* margin-top precisa ser maior que o alcance dos rótulos de marco regulatório
+   (top:-64px do trilho + top:-9px do próprio rótulo): eles vivem acima do plot e
+   .cvm-scroll, por ter overflow-x:auto, também corta no eixo Y. */
+.cvm-plot{position:relative;min-width:700px;height:clamp(290px,33vw,460px);margin-top:88px}
+.cvm-grid{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;pointer-events:none}
+.cvm-grid span{position:relative;border-top:1px solid var(--line)}
+.cvm-grid span:last-child{border-top:2px solid var(--ink)}
+.cvm-grid em{position:absolute;left:0;top:-17px;font-size:11px;font-style:normal;color:var(--muted);font-variant-numeric:tabular-nums}
+.cvm-marks{position:absolute;inset:0}
+.cvm-marks>div{position:absolute;top:-64px;bottom:0;left:var(--left);width:0;z-index:3}
+.cvm-marks>div::before{content:"";position:absolute;left:0;top:0;height:100%;border-left:2px dashed var(--green);transform:scaleY(0);transform-origin:top;transition:transform .7s var(--ease);transition-delay:var(--delay)}
+.cvm.is-drawn .cvm-marks>div::before{transform:scaleY(1)}
+.cvm-marks em{position:absolute;top:-9px;right:13px;width:190px;text-align:right;font-size:12px;font-style:normal;font-weight:700;line-height:1.15;letter-spacing:.05em;text-transform:uppercase;color:var(--green);opacity:0;transform:translateX(18px);transition:opacity .5s var(--ease),transform .5s var(--ease);transition-delay:calc(var(--delay) + .26s)}
+.cvm.is-drawn .cvm-marks em{opacity:1;transform:none}
+.cvm-bars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(10,1fr);align-items:end;z-index:2}
+.cvm-col{display:flex;align-items:flex-end;justify-content:center;gap:5px;height:100%;padding:0 clamp(4px,.68vw,9px)}
+.cvm-col b{position:relative;flex:1;height:0;background:var(--ink);transition:height .85s var(--ease);transition-delay:calc(var(--i) * .055s)}
+.cvm-col b.cvm-jur{background:var(--green)}
+.cvm.is-drawn .cvm-col b{height:var(--h)}
+.cvm-col i{position:absolute;left:50%;bottom:100%;padding-bottom:5px;font-size:12px;font-style:normal;font-weight:700;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap;transform:translateX(-50%);opacity:0;transition:opacity .4s var(--ease);transition-delay:calc(var(--i) * .055s + .6s)}
+.cvm-col b.cvm-jur i{color:var(--green)}
+.cvm.is-drawn .cvm-col i{opacity:1}
+.cvm-years{display:grid;grid-template-columns:repeat(10,1fr);min-width:700px;padding-top:12px}
+.cvm-years span{text-align:center;font-size:clamp(10px,1vw,13px);font-weight:600;letter-spacing:.02em}
+.cvm-hint{display:none}
+.cvm-source{margin:20px 0 0;padding-top:12px;border-top:2px solid var(--ink);font-size:11px;line-height:1.5;color:var(--muted)}
+
+/* Declaração de marca em faixa cheia. */
+.statement{position:relative;padding-block:clamp(72px,7.4vw,106px);color:var(--paper);overflow:hidden}
+.statement::after{content:"";position:absolute;right:-1%;top:50%;width:min(340px,40vw);aspect-ratio:1;background:url('/assets/orbit/owl-white.png') center/contain no-repeat;opacity:.06;transform:translateY(-50%)}
+.statement-inner{position:relative;z-index:1}
+.statement-quote{max-width:1140px;margin:22px 0 0;font-size:clamp(30px,4.1vw,60px);font-weight:600;line-height:1.06;letter-spacing:-.045em}
+
+/* Plug and play: as duas formas de entrar na Rede. */
+.plug{background:var(--mist)}
+/* Coluna direita: foto do escritório de Santos em cima, logo plug-and-play (menor) embaixo. */
+.plug-aside{grid-column:2;grid-row:1/3;align-self:center;display:flex;flex-direction:column;align-items:center;gap:clamp(20px,2.4vw,34px);margin:0}
+.plug-photo{width:100%;margin:0;border-radius:14px;overflow:hidden;box-shadow:0 26px 60px color-mix(in oklch,var(--ink) 18%,transparent)}
+.plug-photo img{width:100%;height:auto;display:block}
+.plug-layout{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(250px,.82fr);gap:clamp(38px,4.4vw,72px) clamp(40px,6vw,96px);align-items:start}
+.plug-heading{grid-column:1;grid-row:1}
+.plug-heading h2{margin-top:26px;font-size:clamp(36px,3.9vw,56px);font-weight:600;line-height:1.02;letter-spacing:-.05em}
+.plug-heading>p{max-width:540px;margin:26px 0 0;font-size:16px;line-height:1.65;color:color-mix(in oklch,var(--ink) 74%,transparent)}
+.plug-heading>p.plug-claim{margin-top:24px;padding-top:22px;border-top:1px solid var(--line);font-size:clamp(16px,1.5vw,19px);font-weight:600;color:var(--ink)}
+.plug-mark{margin:0;display:grid;place-items:center}
+.plug-mark img{width:min(72%,260px)}
+.plug-paths{grid-column:1;grid-row:2;margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.plug-paths li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:7px 14px;padding:26px 0 22px;border-bottom:1px solid var(--line)}
+.plug-paths span{grid-row:1/4;font-size:10px;color:var(--signal)}
+.plug-paths strong{font-size:16px;font-weight:600}
+.plug-paths p{margin:0;font-size:14px;line-height:1.6;color:var(--muted)}
+.plug-paths .text-link{align-self:start;justify-self:start;padding:0;border:0;border-bottom:1px solid color-mix(in oklch,var(--ink) 22%,transparent);background:transparent;color:inherit;cursor:pointer}
+
+/* O Caminho da Verdade: bandeira, manifesto e vídeo. */
+.flag{background:var(--mist)}
+.flag-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,3.8vw,60px) clamp(40px,6vw,90px);align-items:start}
+.flag-heading{grid-column:1;grid-row:1}
+.flag-heading h2{margin-top:24px;font-size:clamp(44px,5.2vw,76px);font-weight:600;line-height:1;letter-spacing:-.05em}
+.flag-heading>p:last-child{max-width:470px;margin:24px 0 0;font-size:16px;line-height:1.65;color:color-mix(in oklch,var(--ink) 74%,transparent)}
+.flag-art{grid-column:2;grid-row:1/3;margin:0;align-self:center}
+.flag-art img{width:100%}
+.flag-manifesto{grid-column:1;grid-row:2;display:grid;gap:16px;align-self:start}
+.flag-manifesto p{margin:0;font-size:clamp(16px,1.5vw,20px);font-weight:500;line-height:1.6}
+.flag-tension{grid-column:1/-1;grid-row:3;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.flag-tension>div{padding:28px 34px 30px 0;border-right:1px solid var(--line)}
+.flag-tension>div:last-child{padding:28px 0 30px 34px;border-right:0}
+.flag-tension span{display:block;font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.flag-tension p{margin:14px 0 0;font-size:15px;line-height:1.6;color:color-mix(in oklch,var(--ink) 78%,transparent)}
+.flag-verdict{grid-column:1/-1;grid-row:4;max-width:920px;margin:0;font-size:clamp(28px,3.4vw,50px);font-weight:600;line-height:1.05;letter-spacing:-.045em}
+.flag-close{grid-column:1;grid-row:5;display:grid;gap:14px;align-self:start}
+.flag-close p{margin:0;font-size:14px;line-height:1.7;color:var(--muted)}
+.flag-video{grid-column:2;grid-row:5}
+.flag-video .video-frame{aspect-ratio:16/9;border-radius:16px}
+.flag-video>p{margin:14px 0 0;font-size:10px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+
+@media(max-width:1100px){
+  .market-heading{grid-template-columns:1fr;gap:20px}
+  .market-heading .kicker,.market-heading h2,.market-heading>p:last-child{grid-column:1}
+  .market-heading>p:last-child{max-width:620px;margin:0}
+  .plug-layout{grid-template-columns:1fr}.plug-heading,.plug-aside,.plug-paths{grid-column:1;grid-row:auto}
+  .flag-layout{grid-template-columns:1fr}.flag-heading,.flag-art,.flag-manifesto,.flag-tension,.flag-verdict,.flag-close,.flag-video{grid-column:1;grid-row:auto}
+  .flag-art img{max-width:620px;margin-inline:auto}
+  .model-option:first-child{border-right-color:color-mix(in oklch,var(--paper) 24%,transparent)}
+}
+
+@media(max-width:760px){
+  .market-heading h2{font-size:clamp(34px,9.4vw,44px)}.market-heading>p:last-child{max-width:none}
+  .market-compare{gap:12px;padding:26px 12px}.market-side{gap:10px}.market-side strong{font-size:clamp(36px,11.6vw,52px)}.market-side figcaption{font-size:12px}
+  /* Sem sangria no mobile: --shell é calc(100vw - 36px) e 100vw inclui a barra de
+     rolagem, então uma margem negativa de -18px estoura a página em ~4px. O card
+     rola internamente, a sangria não acrescentava nada. */
+  .cvm{padding:24px 14px 18px}
+  .cvm-head{flex-direction:column;align-items:flex-start;gap:16px;padding-bottom:14px}
+  .cvm-legend{grid-auto-flow:column;justify-content:start;gap:18px}
+  .cvm-plot{margin-top:74px}
+  .cvm-marks>div{top:-54px}
+  .cvm-marks em{width:132px;right:10px;font-size:9px;letter-spacing:.03em}
+  .cvm-col i{font-size:9px}
+  .cvm-hint{display:block;margin:10px 0 0;font-size:9px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .statement{padding-block:64px}.statement-quote{font-size:clamp(26px,7.8vw,34px)}
+  .plug-heading h2{font-size:clamp(34px,9.2vw,44px)}.plug-mark img{width:min(64%,240px)}
+  .flag-heading h2{font-size:clamp(38px,10.4vw,48px)}
+  .flag-tension{grid-template-columns:1fr}
+  .flag-tension>div,.flag-tension>div:last-child{padding:24px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .flag-tension>div:last-child{border-bottom:0}
+  .flag-verdict{font-size:clamp(26px,7.6vw,34px)}
+  .flag-video .video-frame{border-radius:12px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .cvm-col b,.cvm-col i,.cvm-marks>div::before,.cvm-marks em{transition:none}
+}
+
+/* V3.8 — apresentação do app Meu Plano, mesmo tratamento do vídeo do MP HUB */
+.plan-video-frame{background:oklch(9% .018 160)}
+.plan-product-video{display:block;width:100%;aspect-ratio:16/9;background:oklch(8% .014 160);object-fit:contain}
+/* Com o vídeo como protagonista, o palco de aparelhos passa a apoio: mesma composição
+   aprovada, só reduzida e centrada. Escopado em min-width para não atropelar o
+   carrossel horizontal do mobile, que depende de margin-inline:-8px. */
+@media(min-width:761px){
+  .plan-device-stage{max-width:780px;min-height:500px;margin:28px auto 0}
+}
+@media(max-width:760px){
+  .plan-device-stage{margin-top:22px}
+}
+
+/* V3.9 — nomes dos fundadores em uma linha só */
+/* "Gabriel Liberato" quebrava em duas linhas e desalinhava com "Renan Lima": a ficha
+   de texto é estreita no range 1101–1440px. Ela ganha largura avançando mais sobre o
+   retrato, e o nome fica travado em nowrap. Escopado em min-width porque abaixo de
+   1100px a ficha usa margin shorthand própria, que não pode ser atropelada. */
+/* 1) O nome nunca quebra, e a ficha ganha largura avançando mais sobre o retrato
+      no range 1101–1440px, onde a coluna de texto é estreita. */
+.founder h3{white-space:nowrap}
+@media(min-width:1101px){
+  .founder>div{margin-left:-76px}
+  .founder h3{font-size:clamp(23px,1.95vw,28px)}
+}
+/* 2) As fichas são alinhadas pelo rodapé, então a bio do Renan (4 linhas) empurrava
+      o nome dele 20px acima do do Gabriel (3 linhas). Reservando 4 linhas na bio as
+      duas fichas ficam da mesma altura e os nomes na mesma linha do olho. */
+.founder p{min-height:calc(4 * 1.65em)}
+
+/* V4.0 — "O que fazemos": recriação da lâmina Produtos na linguagem da página.
+   Quatro cards retrato de foto com tipo por cima, o terceiro (Consultoria) em
+   destaque verde como na lâmina original. O selo da marca que aparecia em cada
+   card virou índice 01–04: a logo já está no header e repeti-la 4× viraria ruído,
+   enquanto a numeração é o vocabulário que o resto da página usa (hero-index,
+   wealth-principles, plug-paths) e ainda entrega a ideia de escada. */
+.offer{background:var(--mist);border-top:1px solid var(--line)}
+.offer-layout{display:grid;gap:clamp(46px,5vw,68px)}
+.offer-heading{display:grid;grid-template-columns:minmax(0,1.42fr) minmax(0,.88fr);align-items:end;gap:26px clamp(40px,5vw,90px)}
+.offer-heading .kicker{grid-column:1/-1}
+.offer-heading h2{margin:0;font-size:clamp(38px,3.9vw,56px);font-weight:600;line-height:1.02;letter-spacing:-.045em}
+.offer-heading>p:last-child{max-width:430px;margin:0 0 6px;font-size:15px;line-height:1.65;color:color-mix(in oklch,var(--ink) 72%,transparent)}
+
+.offer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,1.7vw,24px);margin:0;padding:0;list-style:none}
+.offer-card{position:relative;aspect-ratio:3/4;border-radius:16px;background:var(--dark);overflow:hidden;isolation:isolate;box-shadow:0 20px 46px color-mix(in oklch,var(--ink) 14%,transparent)}
+.offer-card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:none}
+/* Duas camadas: um véu geral que garante contraste do tipo em qualquer foto e um
+   pé mais fundo, onde mora a linha de resultado. */
+.offer-card::before{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,color-mix(in oklch,var(--dark) 46%,transparent) 0%,color-mix(in oklch,var(--dark) 34%,transparent) 26%,color-mix(in oklch,var(--dark) 62%,transparent) 50%,color-mix(in oklch,var(--dark) 82%,transparent) 78%,color-mix(in oklch,var(--dark) 93%,transparent) 100%)}
+.offer-card-body{position:relative;z-index:2;height:100%;display:grid;grid-template-rows:1fr auto;padding:clamp(20px,1.9vw,28px)}
+.offer-card-title{align-self:center;text-align:center;padding-inline:2px;text-shadow:0 2px 28px color-mix(in oklch,var(--dark) 62%,transparent)}
+/* Os quatro títulos têm quebra explícita no HTML para ficarem todos em duas linhas:
+   é isso que alinha a régua e a linha de resultado entre as fichas. Por isso nada de
+   text-wrap:balance aqui — ele reequilibraria as linhas e desfaria o pareamento. */
+.offer-card-title h3{margin:0;font-size:clamp(19px,1.75vw,25px);font-weight:600;line-height:1.14;letter-spacing:-.035em;color:var(--paper)}
+.offer-card-title small{display:block;margin-top:13px;padding-top:13px;border-top:1px solid color-mix(in oklch,var(--paper) 34%,transparent);font-size:11.5px;line-height:1.35;color:color-mix(in oklch,var(--paper) 78%,transparent)}
+.offer-card-body>p{margin:0;font-size:12px;line-height:1.5;color:color-mix(in oklch,var(--paper) 74%,transparent)}
+.offer-card-body>p strong{font-weight:600;color:var(--paper)}
+/* O card em destaque: verde da marca por cima da foto, como na lâmina. */
+.offer-card-featured{background:var(--forest)}
+.offer-card-featured>img{filter:none}
+.offer-card-featured::before{background:linear-gradient(180deg,color-mix(in oklch,var(--dark) 46%,transparent) 0%,color-mix(in oklch,var(--dark) 34%,transparent) 26%,color-mix(in oklch,var(--dark) 62%,transparent) 50%,color-mix(in oklch,var(--dark) 82%,transparent) 78%,color-mix(in oklch,var(--dark) 93%,transparent) 100%)}
+.offer-note{max-width:640px;margin:0;font-size:13px;line-height:1.6;color:var(--muted)}
+
+/* O título é longo (seis palavras), então a coluna dele tem que ser a larga em todos
+   os breakpoints — invertido em relação ao One Stop Wealth, cujo h2 tem duas palavras
+   por linha. E nada de fixar o parágrafo com grid-column: a colocação automática já
+   o joga na segunda coluna, e um grid-column:2 sobrevive ao breakpoint de uma coluna
+   criando uma coluna implícita que engole a largura do título. */
+@media(max-width:1100px){
+  .offer-heading{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+  .offer-heading>p:last-child{max-width:none}
+  /* Com o card mais estreito, subtítulo e linha de resultado passam a quebrar em
+     números diferentes de linhas por ficha. Como o bloco de título é centrado no
+     espaço livre, isso parava a régua de cada card numa altura diferente. Reservar
+     as linhas iguala as quatro fichas — mesmo recurso do min-height das bios dos
+     fundadores. A 1440 não é preciso: lá todas quebram igual.
+     O `+13px` é o padding-top da régua: com box-sizing:border-box o min-height
+     inclui o padding, e sem somá-lo o card de uma linha fica 13px mais curto. */
+  .offer-card-title small{min-height:calc(2 * 1.35em + 13px)}
+  .offer-card-body>p{min-height:calc(3 * 1.5em)}
+}
+/* A fileira de quatro é a ideia da seção, então ela se mantém o quanto der. Abaixo de
+   mil o card fica estreito demais para o título de duas linhas: passa a 2x2, com a
+   grade limitada para o card não inflar num painel de 640px de altura. */
+@media(max-width:1000px){
+  .offer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,26px);max-width:700px}
+}
+@media(max-width:760px){
+  .offer-heading{grid-template-columns:1fr;gap:22px}
+  .offer-heading h2{font-size:clamp(34px,9.4vw,44px)}
+  /* Com quatro linhas, o <br> autoral vira órfão ("cuidar" sozinho): abaixo de 760 a
+     quebra volta a ser do navegador, equilibrada. */
+  .offer-heading h2 br{display:none}
+  .offer-heading h2{text-wrap:balance}
+  .offer-grid{max-width:none}
+  /* Duas colunas no celular em vez de carrossel: a leitura da seção é a escada
+     inteira de uma vez. Os cards ficam mais altos para o título de 3 linhas
+     ("Consultoria de Investimentos") caber sem apertar a linha de resultado. */
+  .offer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+  .offer-card{aspect-ratio:.63;border-radius:13px}
+  .offer-card-body{padding:15px 13px 16px}
+  .offer-card-title h3{font-size:17px}
+  .offer-card-title small{margin-top:10px;padding-top:10px;font-size:10.5px;min-height:calc(2 * 1.35em + 10px)}
+  .offer-card-body>p{font-size:11px;line-height:1.45;min-height:calc(3 * 1.45em)}
+}
+/* A 360px a linha de resultado mais longa passa a ocupar quatro linhas. */
+@media(max-width:390px){
+  .offer-card-body>p{min-height:calc(4 * 1.45em)}
+}
+
+/* V4.2 — MP Intelligence: ajuste de conteúdo na seção de tecnologia.
+   Só tipografia das linhas novas. A grade de duas colunas, as tabs, os painéis e os
+   vídeos não são tocados — foi condição do briefing. As regras entram na coluna
+   esquerda, que é sticky no desktop, então o conjunto foi mantido enxuto de propósito:
+   copy longo aqui estoura a altura da viewport e a coluna começa a ser cortada. */
+.mpi-formula{margin:14px 0 0;font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--paper)}
+.mpi-formula i{margin-inline:5px;font-style:normal;color:var(--signal)}
+.mpi-lede{margin:12px 0 0;max-width:34ch;font-size:13.5px;line-height:1.62;color:color-mix(in oklch,var(--paper) 62%,transparent)}
+/* Irmã da .technology-layout, não linha dela: dentro da grade a faixa estendia o
+   bloco-contêiner da coluna sticky e era atropelada por ela. O afastamento agora é
+   margem própria, já que não há mais row-gap da grade para separar. */
+.mpi-close{margin-top:clamp(56px,6vw,96px)}
+/* As tecnologias por trás do ecossistema viram fichas com ícone: eram uma linha de
+   texto miúdo ("POR TRÁS · IA · Open Finance · Dados · Automação") que ninguém lia. */
+.mpi-stack{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.mpi-stack li{display:flex;align-items:center;gap:10px;padding:11px 18px 11px 14px;border:1px solid color-mix(in oklch,var(--paper) 20%,transparent);border-radius:999px;background:color-mix(in oklch,var(--paper) 5%,transparent)}
+.mpi-stack svg{width:20px;height:20px;flex:none;color:var(--signal)}
+.mpi-stack span{font-size:13px;font-weight:500;letter-spacing:-.005em;color:var(--paper)}
+@media(max-width:760px){
+  .mpi-stack{gap:8px}
+  .mpi-stack li{padding:9px 15px 9px 12px;gap:8px}
+  .mpi-stack svg{width:18px;height:18px}
+  .mpi-stack span{font-size:12.5px}
+}
+/* O fecho atravessa as duas colunas: é a mensagem que orienta o projeto, não legenda
+   de painel. `grid-column:1/-1` mantém a grade original intacta. */
+/* O fecho do MP Intelligence é DECLARAÇÃO, não legenda de painel. Ele fica parado
+   enquanto os módulos trocam ao lado, e alinhado à esquerda no mesmo corpo do resto
+   do texto ele lia como repetição a cada troca de aba. Vira placa: centrada, com
+   moldura e fundo próprios, tipo maior e um selo verde em cima. */
+.mpi-principle{position:relative;max-width:min(880px,100%);margin:clamp(42px,4.6vw,70px) auto 0;padding:clamp(34px,3.6vw,54px) clamp(24px,3vw,58px) clamp(30px,3.2vw,46px);border:1px solid color-mix(in oklch,var(--paper) 18%,transparent);border-radius:20px;background:radial-gradient(130% 170% at 50% 0%,color-mix(in oklch,var(--paper) 9%,transparent),transparent 68%);text-align:center}
+.mpi-seal{position:absolute;left:50%;top:0;width:38px;height:3px;border-radius:0 0 3px 3px;background:var(--signal);transform:translateX(-50%)}
+.mpi-principle strong{display:block;max-width:32ch;margin:0 auto 16px;font-size:clamp(22px,2.7vw,35px);font-weight:600;letter-spacing:-.04em;line-height:1.14;color:var(--paper);text-wrap:balance}
+.mpi-principle span{display:block;max-width:50ch;margin-inline:auto;font-size:14.5px;line-height:1.62;text-wrap:balance;color:color-mix(in oklch,var(--paper) 56%,transparent)}
+@media(max-width:1100px){
+  /* Fora do sticky a coluna vira metade da largura, então o texto pode respirar. */
+  .mpi-lede{max-width:44ch}
+  .mpi-formula,.mpi-lede{grid-column:1}
+}
+@media(max-width:760px){
+  .mpi-lede{max-width:none}
+    .mpi-principle{margin-top:32px;padding:28px 20px 24px;border-radius:16px}
+}
+
+/* V4.3/V4.5 — assinatura do ecossistema nos painéis de método (FSC e ASC).
+   A placa tipográfica que existia aqui foi removida na V4.5: era paliativo por
+   falta de material, e os dois módulos passaram a ter filme próprio. */
+.method-badge{display:flex;align-items:center;gap:8px;margin:0;padding-top:20px;border-top:1px solid color-mix(in oklch,var(--paper) 14%,transparent);text-align:center;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:color-mix(in oklch,var(--paper) 52%,transparent)}
+.method-badge i{width:6px;height:6px;border-radius:50%;background:var(--signal);flex:none}
+@media(max-width:760px){.method-badge{padding-top:16px;letter-spacing:.08em;font-size:9px}}
+
+/* ═══ V4.4 ═══════════════════════════════════════════════════════════════════
+   1) Dobra da dor ("O que falta quando falta estrutura")
+   2) Assinatura grande do MP Intelligence
+   3) ASC com vídeo do método
+   4) MP PRO como 5º módulo, com a folha branca dentro do painel escuro
+   ══════════════════════════════════════════════════════════════════════════ */
+
+/* 1) A dor de operar sem estrutura. Copy literal dos slides do CEO: quatro negações
+      e a virada. Fundo `--dark` (quase-preto) porque a dobra vem entre o hero claro e
+      o Mercado claro — é o único ponto escuro do começo da página, e isso é o peso. */
+.strain{background:var(--forest);color:var(--paper)}
+.strain-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(30px,3.4vw,52px) clamp(40px,5vw,88px);align-items:start}
+/* A notícia abre a dobra em largura cheia: é ela que instala o problema. */
+.strain-heading{grid-column:1/-1;grid-row:1}
+.strain-news{max-width:700px;margin:22px 0 0}
+.strain-news img{display:block;width:100%;height:auto;padding:clamp(18px,2.1vw,30px);background:var(--paper);border-radius:14px;box-shadow:0 26px 64px color-mix(in oklch,#000 38%,transparent)}
+.strain-news figcaption{margin-top:10px;font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:color-mix(in oklch,var(--paper) 48%,transparent)}
+.strain-why{grid-column:1;grid-row:2}
+.strain-why h2{margin:0;font-size:clamp(38px,4.4vw,62px);font-weight:600;line-height:1.02;letter-spacing:-.045em}
+/* ⚠️ Item que ATRAVESSA linhas distribui a própria altura entre elas: com a <img> no
+   fluxo, a foto (990px) inflava a linha do título e abria um vão de 165px até a lista.
+   A <img> absoluta não contribui altura intrínseca, então as linhas voltam a ser
+   definidas pelo texto e a foto só preenche a área. */
+.strain-photo{position:relative;grid-column:2;grid-row:2/span 2;align-self:stretch;min-height:380px;margin:0;border-radius:13px;overflow:hidden;box-shadow:0 30px 80px color-mix(in oklch,#000 55%,transparent)}
+.strain-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(.3) contrast(1.04) brightness(.92)}
+.strain-list{grid-column:1;grid-row:3;margin:0;padding:0;list-style:none;border-top:1px solid color-mix(in oklch,var(--paper) 15%,transparent)}
+.strain-list li{display:grid;gap:5px;padding:clamp(14px,1.5vw,20px) 0;border-bottom:1px solid color-mix(in oklch,var(--paper) 12%,transparent)}
+.strain-list li:last-child{border-bottom:0}
+.strain-list span{font-size:13px;line-height:1.4;color:color-mix(in oklch,var(--paper) 56%,transparent)}
+.strain-list strong{font-size:clamp(27px,3.2vw,42px);font-weight:600;line-height:1;letter-spacing:-.04em;color:var(--paper)}
+.strain-turn{grid-column:1/-1;max-width:64ch;margin:clamp(8px,1.4vw,20px) 0 0;font-size:clamp(16px,1.7vw,21px);line-height:1.5;color:color-mix(in oklch,var(--paper) 72%,transparent)}
+/* Marcador próprio: o `.hero-marker` só anima dentro de `.hero-copy.is-visible` e
+   fora dali fica em scaleX(0) — invisível. */
+.strain-mark{position:relative;z-index:0;display:inline-block;isolation:isolate;font-weight:600;color:var(--paper)}
+.strain-mark::before{content:"";position:absolute;left:-.02em;right:-.05em;bottom:.02em;z-index:-1;height:.34em;background:var(--signal);opacity:.85;transform:rotate(-.7deg) skewX(-8deg)}
+@media(max-width:900px){
+  .strain-layout{grid-template-columns:1fr}
+  .strain-heading,.strain-why,.strain-list,.strain-photo,.strain-turn{grid-column:1;grid-row:auto}
+  .strain-photo{min-height:0;aspect-ratio:4/3}
+}
+@media(max-width:760px){
+  .strain-why h2{font-size:clamp(34px,9.4vw,44px)}
+  .strain-why h2 br{display:none}
+  .strain-news{max-width:none;margin-top:16px}
+  .strain-list strong{font-size:31px}
+  .strain-photo{margin-inline:-8px;border-radius:11px}
+}
+
+/* 2) Assinatura do ecossistema. O nome vem grande, em contorno, ocupando a largura
+      da página — é a ênfase que o briefing pede, sem clichê visual de IA.
+      ⚠️ `overflow:hidden` está PROIBIDO em `.technology` e em qualquer ancestral da
+      coluna sticky: cria um contêiner de scroll e mata o `position:sticky`. Por isso
+      o brilho mora no próprio banner, que é irmão da grade, não ancestral. */
+.mpi-banner{position:relative;padding-bottom:clamp(28px,3.2vw,46px);margin-bottom:clamp(44px,5vw,74px);border-bottom:1px solid color-mix(in oklch,var(--paper) 15%,transparent)}
+.mpi-banner::before{content:"";position:absolute;left:-8%;top:-42%;width:62%;height:190%;z-index:0;pointer-events:none;background:radial-gradient(50% 50% at 50% 50%,color-mix(in oklch,var(--signal) 16%,transparent),transparent 72%)}
+.mpi-wordmark{position:relative;z-index:1;margin:0;font-size:min(9.2vw,138px);font-weight:700;line-height:.92;letter-spacing:-.055em;white-space:nowrap;color:transparent;-webkit-text-stroke:clamp(1px,.11vw,1.7px) color-mix(in oklch,var(--paper) 40%,transparent)}
+.mpi-statement{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1.04fr) minmax(0,.96fr);align-items:end;gap:22px clamp(40px,5vw,88px);margin-top:clamp(24px,2.8vw,40px)}
+.mpi-statement h2{margin:0;font-size:clamp(30px,3.2vw,46px);font-weight:600;line-height:1.04;letter-spacing:-.04em;color:var(--paper)}
+@media(max-width:900px){.mpi-statement{grid-template-columns:1fr;gap:18px}}
+@media(max-width:760px){
+  .mpi-wordmark{-webkit-text-stroke-width:1px}
+  .mpi-statement h2{font-size:28px}
+  .mpi-statement h2 br{display:none}
+}
+/* A coluna sticky agora é só o trilho de módulos — o enunciado subiu para o banner.
+   Com cinco tabs, manter h2 + fórmula + definição ali estouraria a viewport útil e a
+   coluna pinaria cortada (o bug da V4.2). */
+.technology-heading .kicker{margin-bottom:22px}
+.product-tabs{margin-top:0}
+
+/* 3) ASC: o método tem vídeo próprio, então o painel abandona a placa tipográfica. */
+.fsc-video-frame,.asc-video-frame{background:oklch(9% .018 160)}
+.fsc-product-video{display:block;width:100%;aspect-ratio:16/9;background:oklch(8% .014 160);object-fit:contain}
+.asc-product-video{display:block;width:100%;aspect-ratio:16/9;background:oklch(8% .014 160);object-fit:contain}
+.asc-badge,.fsc-badge{justify-content:flex-start;margin-top:22px}
+
+/* V4.6 — Renan: nos módulos com vídeo, o vídeo vai para CIMA e o texto (menor)
+   vem ABAIXO. Reordena por flex/order sem tocar o HTML de cada painel; vale para
+   FSC, ASC, MP HUB e Meu Plano. MP PRO segue o mesmo padrão (imagem no topo, texto
+   abaixo, folha de trilhas por último).
+   ⚠️ :not([hidden]) é OBRIGATÓRIO: sem ele o seletor de ID vence .product-panel[hidden]
+   {display:none} e os painéis inativos reaparecem empilhados. */
+#panel-fsc:not([hidden]),#panel-asc:not([hidden]),#panel-hub:not([hidden]),#panel-plano:not([hidden]),#panel-pro:not([hidden]){display:flex;flex-direction:column}
+#panel-fsc .browser-frame,#panel-asc .browser-frame,#panel-hub .browser-frame,#panel-plano .browser-frame,#panel-pro .browser-frame{order:1;margin-bottom:clamp(22px,2.4vw,34px)}
+#panel-fsc .product-copy,#panel-asc .product-copy,#panel-hub .product-copy,#panel-plano .product-copy,#panel-pro .product-copy{order:2;margin-bottom:0}
+#panel-fsc .method-badge,#panel-asc .method-badge{order:3}
+#panel-pro .pro-sheet{order:3;margin-top:clamp(28px,3vw,44px)}
+/* MP PRO: texto vai por ÚLTIMO, abaixo da folha branca de trilhas */
+#panel-pro .product-copy{order:4;margin-top:clamp(28px,3vw,44px)}
+/* texto um pouco menor abaixo do vídeo */
+#panel-fsc .product-copy h3,#panel-asc .product-copy h3,#panel-hub .product-copy h3,#panel-plano .product-copy h3,#panel-pro .product-copy h3{font-size:clamp(26px,2.9vw,40px)}
+#panel-fsc .product-copy p,#panel-asc .product-copy p,#panel-hub .product-copy p,#panel-plano .product-copy p,#panel-pro .product-copy p{font-size:13.5px}
+
+/* 4) MP PRO: a folha branca dentro do painel escuro — mesmo conteúdo da dobra que
+      existia abaixo, condensado. ⚠️ `.course-float` é absoluto e vaza ~10% abaixo do
+      frame: sem a folga ele encosta na folha. */
+/* ⚠️ `.course-float` fica em `right:-4%` do frame. Na dobra antiga o frame tinha
+   max-width:940px centrado e sobrava calha; dentro do painel ele ocupa a coluna inteira
+   e os -4% saíam da shell — o `overflow-x:hidden` do body ESCONDE isso, então não
+   aparece como overflow de documento, só corta o print. Recuado para caber. */
+#panel-pro .pro-frame{margin-bottom:clamp(58px,7vw,92px)}
+#panel-pro .course-float{right:-1.5%;width:44%}
+/* Trilha 03 tem título de duas linhas: sem reservar as linhas, a legenda dela desce e
+   desalinha das outras duas (mesma armadilha dos cards de Produtos). */
+.pro-tracks strong{min-height:calc(2 * 1.16em)}
+#panel-pro .product-copy h3{text-wrap:balance}
+.pro-sheet{padding:clamp(24px,2.8vw,40px);border-radius:13px;background:var(--paper);color:var(--ink)}
+.pro-tracks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;padding:0;list-style:none}
+.pro-tracks li{padding:0 22px 0 0;border-right:1px solid var(--line)}
+.pro-tracks li:last-child{padding-right:0;border-right:0}
+.pro-tracks li:not(:first-child){padding-left:22px}
+.pro-tracks span{display:block;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green)}
+.pro-tracks strong{display:block;margin-top:9px;font-size:clamp(15px,1.4vw,18px);font-weight:600;line-height:1.16;letter-spacing:-.025em;color:var(--ink)}
+.pro-tracks small{display:block;margin-top:7px;font-size:12px;line-height:1.45;color:var(--muted)}
+.pro-sheet-detail{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,2.6vw,44px);margin-top:clamp(24px,2.6vw,34px);padding-top:clamp(20px,2.2vw,28px);border-top:1px solid var(--line)}
+.pro-label{margin:0;font-size:9px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted)}
+.pro-topics{margin:9px 0 0;font-size:13.5px;line-height:1.6;color:color-mix(in oklch,var(--ink) 78%,transparent)}
+@media(max-width:860px){
+  .pro-tracks{grid-template-columns:1fr}
+  .pro-tracks li{padding:16px 0;border-right:0;border-bottom:1px solid var(--line)}
+  .pro-tracks li:not(:first-child){padding-left:0}
+  .pro-tracks li:last-child{border-bottom:0}
+  .pro-tracks li:first-child{padding-top:0}
+  .pro-tracks strong{min-height:0}
+  .pro-sheet-detail{grid-template-columns:1fr}
+}
+@media(max-width:760px){.pro-sheet{margin-inline:-8px;padding:22px 18px}}
+
+/* ═══ V4.5 — correções de mobile ═══════════════════════════════════════════ */
+/* O `min-height` do card de candidatura foi calibrado para o desktop, onde há
+   espaço. A 390px ele valia 720px contra 380px de conteúdo na etapa 1: sobravam
+   ~233px de branco morto, que lê como página quebrada. No mobile o card passa a
+   caber no conteúdo — ele cresce ao avançar de etapa, e o crescimento acontece
+   depois de um toque deliberado, não na chegada. */
+/* Vale para todas as larguras: o vão era de 181px no desktop e 233px no mobile.
+   A etapa 1 é o que 100% dos visitantes veem; as etapas 2 e 3 só aparecem depois de
+   um toque deliberado, e um card que cresce ao avançar é comportamento normal de
+   formulário — muito melhor que um vazio branco que lê como página quebrada. */
+.application-form{min-height:0}
+/* A dica do gráfico agora aponta para trás: o scroller abre nos anos recentes. */
+@media(max-width:760px){
+  .cvm-hint{letter-spacing:.06em}
+}
+
+/* Depoimentos com retrato de estúdio. O quadro é 16:9 por causa do vídeo, e as fotos
+   são quadradas: recortar em 16:9 decapitaria o retrato. A foto entra INTEIRA, na altura
+   cheia, sobre um fundo da marca — e a thumb da Camilla era 480×360 esticada, daí a
+   qualidade ruim que aparecia. */
+/* ⚠️ Existem DOIS `.video-frame` na página com proporções diferentes: o da dobra da
+   bandeira é 16:9 e o dos depoimentos é 9:16. Medir com querySelector pega o primeiro
+   e leva à conclusão errada — foi o que aconteceu aqui.
+   As fotos são retratos quadrados de estúdio, recortados para 9:16 centrados no rosto,
+   então `cover` preenche o quadro sem ampliar nada. */
+.video-poster::after{background:color-mix(in oklch,var(--dark) 10%,transparent)}
+
+/* ═══ V4.6 — implementações de mobile ═════════════════════════════════════════
+   Vindas da auditoria de 17/08: a página tinha 22,5 telas, o nome do ecossistema
+   ficava lavado, o trilho de módulos comia um terço de tela e havia tipografia de
+   8 a 10px em rótulo. Nada aqui corta conteúdo — tudo condensa ou aumenta.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+@media(max-width:760px){
+  /* 1) Assinatura do ecossistema: no celular o contorno de 36px sumia no verde.
+        Vira peso — preenchida, em duas linhas, ocupando a largura toda. */
+  .mpi-wordmark{
+    font-size:min(12.6vw,58px);line-height:.92;white-space:normal;
+    color:var(--paper);-webkit-text-stroke:0;letter-spacing:-.055em;
+    max-width:9ch; /* força a quebra em "MP" / "Intelligence" */
+  }
+  .mpi-banner::before{width:88%;top:-30%;height:150%}
+
+  /* 3) Piso tipográfico. O selo de método estava em 9px caixa alta com espaçamento,
+        e as legendas do mapa de ferramentas em 8px — ilegíveis para o consultor de
+        45 anos que a página quer recrutar. */
+  .kicker{font-size:11px;letter-spacing:.14em}
+  .tool figcaption{font-size:10.5px;letter-spacing:.1em}
+  .method-badge,.pro-label,.cvm-hint{font-size:10.5px;letter-spacing:.1em}
+  /* O selo é flex com o ponto na frente: `text-align:center` deixava o ponto na
+     esquerda e a frase centralizada, desalinhados. */
+  .method-badge{text-align:left;align-items:flex-start}
+  .method-badge i{margin-top:5px}
+  .cvm-years span,.cvm-grid em{font-size:10px}
+  .cvm-marks em{font-size:10px}
+  .offer-card-title small{font-size:11px}
+  .video-testimonial footer span{font-size:12px}
+  .plan-device figcaption,.mp-orbit-mobile figcaption{font-size:10.5px}
+  /* Segunda passada do piso: os que sobraram abaixo de 10,5px, levantados um por um.
+     Ficam de fora só os de dentro de moldura de navegador (`.frame-bar span`, que
+     imita a barra de endereço do browser e precisa ser miúda para ler como tal) e os
+     números sobre as barras do gráfico, que não caberiam maiores. */
+  .hero-rule span{font-size:10.5px}
+  .hero-index>div small{font-size:11px}
+  .model-markets span{font-size:10.5px}
+  .wealth-core-copy span{font-size:10.5px}
+  .product-copy>span{font-size:10.5px}
+  .pro-tracks span,.founder>div span,.flag-tension span,.process-line small{font-size:10.5px}
+  .flag-video p{font-size:11px}
+  .conversion-steps li{font-size:10.5px}
+  .form-header p{font-size:10.5px}
+  .choice-group legend small{font-size:10.5px}
+  .certification-grid label span{font-size:11px}
+  .site-footer p,.site-footer a{font-size:11px}
+  .mobile-cta div span{font-size:10.5px}
+
+  /* 4) Mapa de ferramentas: nove tiles de 142px somavam 714px. As linhas encolhem e
+        a legenda cresce — mantidas duas colunas de propósito, porque em três os
+        wordmarks ("MP ADVISORY", "Family Office Club") ficariam ilegíveis. */
+  .tool-map{grid-auto-rows:112px}
+  .tool img{max-height:48px}
+  .tool-hub img,.tool-fsc img,.tool-asc img,.tool-plano img{max-height:54px}
+
+  /* 5) Fundadores: retrato de 500px por ficha. Encolhe sem virar miniatura. */
+  .founder figure{max-height:340px;overflow:hidden}
+  .founder figure img{width:100%;height:340px;object-fit:cover;object-position:50% 22%}
+
+  /* 6) Depoimentos: o vídeo é vertical, então o quadro 9:16 tem piso — o ganho vem
+        de estreitar o cartão, não de mudar a proporção (mudar letterboxaria o vídeo). */
+  .partner-videos{max-width:320px}
+}
+
+/* 2) Trilho de módulos horizontal. Empilhado, custava 321px de altura antes de
+      qualquer conteúdo. Vira faixa deslizante com encaixe, o padrão que as pessoas
+      já conhecem de app. Escopado em 860px porque é onde a grade da seção quebra. */
+@media(max-width:860px){
+  /* ⚠️ Sem `min-width:0` o trilho flex impõe sua largura de min-content à coluna da
+     grade (`1fr` tem mínimo automático): a seção inteira ia a 547px num viewport de
+     390 e a PÁGINA passava a rolar de lado. O `overflow-x:auto` do trilho não protege
+     disso — quem precisa poder encolher é o item da grade. */
+  .technology-heading{min-width:0}
+  .product-tabs{
+    display:flex;gap:8px;margin-inline:-18px;padding:2px 18px 4px;max-width:100%;
+    border-top:0;overflow-x:auto;overscroll-behavior-x:contain;
+    scroll-snap-type:x proximity;scrollbar-width:none;-ms-overflow-style:none;
+  }
+  .product-tabs::-webkit-scrollbar{display:none}
+  .product-tabs button{
+    flex:0 0 auto;width:auto;min-height:0;display:block;padding:11px 17px;
+    border:1px solid color-mix(in oklch,var(--paper) 22%,transparent);
+    border-bottom:1px solid color-mix(in oklch,var(--paper) 22%,transparent);
+    border-radius:999px;scroll-snap-align:start;text-align:left;white-space:nowrap;
+  }
+  .product-tabs button span{display:none}
+  .product-tabs button strong{display:block;font-size:14px}
+  .product-tabs button small{display:block;margin-top:1px;font-size:10.5px;letter-spacing:.09em;opacity:.85}
+  .product-tabs button[aria-selected=true]{
+    border-color:transparent;background:var(--paper);color:var(--ink);
+  }
+  .product-tabs button[aria-selected=true] small{color:var(--green);opacity:1}
+  .technology-heading .kicker{margin-bottom:14px}
+}

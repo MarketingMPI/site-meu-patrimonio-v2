@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#00503c">
+  <title>Consultoria de Investimentos - Meu Patrimônio | A gente cuida, você desfruta</title>
+  <meta name="description" content="Consultoria de investimentos credenciada na CVM, remunerada por uma taxa fixa e sem comissão de produto. Com a metodologia MP 360 e a filosofia Goal Based Investing, sua carteira é desenhada para os seus objetivos de vida.">
+  <meta property="og:title" content="Consultoria de Investimentos - Meu Patrimônio">
+  <meta property="og:description" content="A expertise é nossa, o controle é seu. Investimentos alinhados aos seus interesses, sem conflito, com 100% de cashback de comissões.">
+  <link rel="icon" href="assets/img/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/img/favicon-512.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles.css?v=25">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- ================= HEADER (padrão da home) ================= -->
+  <header class="site-header" data-header>
+    <div class="header-inner">
+      <a class="brand" href="../" aria-label="Meu Patrimônio, início">
+        <img class="brand-owl" src="assets/img/logo-coruja-branca.png" alt="Meu Patrimônio" width="88" height="88" fetchpriority="high">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <div class="nav-item"><a href="../quem-somos/">Quem somos</a></div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true">O que fazemos
+            <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="submenu">
+            <a href="../educacao/">Educação Financeira</a>
+            <a href="../planejamento/">Planejamento Financeiro</a>
+            <a href="../consultoria/" aria-current="page">Consultoria de Investimentos</a>
+            <a href="../family-office/">Family Office</a>
+            <a href="https://meupatrimonio.com/indicar-e-ganhar-e-muito-facil/">Indique e Ganhe</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true">Ecossistema
+            <svg class="chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="submenu submenu-eco">
+            <div class="submenu-col">
+              <p class="submenu-label">Para você</p>
+              <a href="https://meupatrimonio.com/blog/">Blog</a>
+              <a href="https://www.youtube.com/@Gabriel_Liberato">Canal no YouTube</a>
+              <a href="https://meupatrimonio.com/glossario-financeiro/">Glossário Financeiro</a>
+              <a href="../educacao/">Materiais Gratuitos</a>
+            </div>
+            <div class="submenu-col">
+              <p class="submenu-label">Para profissionais</p>
+              <a href="https://appmeuplano.com/restrito/login">Meu Plano</a>
+              <a href="https://mphub.meupatrimonio.com/">MP Hub</a>
+              <a href="https://mppro.meupatrimonio.com/">MP Pro</a>
+              <a class="submenu-cta" href="https://meupatrimonio.com/formulario-seja-um-parceiro-mp/">Quero ser parceiro &rarr;</a>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item"><a href="https://meupatrimonio.com/parceiros/">Seja um parceiro</a></div>
+      </nav>
+
+      <div class="header-cta">
+        <span class="header-selo">Consultoria</span>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+          <span></span><span></span><span></span><span class="sr-only">Abrir menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu (padrão da home) -->
+  <nav class="mobile-menu" id="mobile-menu" data-mobile-menu aria-label="Navegação mobile">
+    <a href="../quem-somos/">Quem somos</a>
+    <div class="mob-group"><span>O que fazemos</span>
+      <div class="mob-sub">
+        <a href="../educacao/">Educação Financeira</a>
+        <a href="../planejamento/">Planejamento Financeiro</a>
+        <a href="../consultoria/">Consultoria de Investimentos</a>
+        <a href="../family-office/">Family Office</a>
+        <a href="https://meupatrimonio.com/indicar-e-ganhar-e-muito-facil/">Indique e Ganhe</a>
+      </div>
+    </div>
+    <div class="mob-group"><span>Ecossistema</span>
+      <div class="mob-sub">
+        <a href="https://meupatrimonio.com/blog/">Blog</a>
+        <a href="https://www.youtube.com/@Gabriel_Liberato">Canal no YouTube</a>
+        <a href="https://meupatrimonio.com/glossario-financeiro/">Glossário Financeiro</a>
+        <a href="../educacao/">Materiais Gratuitos</a>
+        <a href="https://appmeuplano.com/restrito/login">Meu Plano</a>
+        <a href="https://mphub.meupatrimonio.com/">MP Hub</a>
+        <a href="https://mppro.meupatrimonio.com/">MP Pro</a>
+      </div>
+    </div>
+    <a href="https://meupatrimonio.com/parceiros/">Seja um parceiro</a>
+    <a class="btn btn-primary" href="https://wa.me/5513981191955?text=Ol%C3%A1%2C+vim+do+site+e+quero+falar+sobre+consultoria+de+investimentos%21" target="_blank" rel="noopener">Fale com um Consultor</a>
+  </nav>
+
+  <main id="conteudo">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="topo">
+      <div class="shell hero-inner">
+        <div class="hero-words reveal">
+          <span>Proteger.</span>
+          <span class="green">Crescer.</span>
+          <span>Realizar.</span>
+        </div>
+        <div class="hero-rule reveal"></div>
+        <div class="hero-meta reveal">
+          <span class="hero-cvm">Consultoria de investimentos credenciada na CVM</span>
+          <a class="btn btn-primary hero-btn" href="https://wa.me/5513981191955?text=Ol%C3%A1%2C+vim+do+site+e+quero+falar+sobre+consultoria+de+investimentos%21" target="_blank" rel="noopener">Fale com um Consultor</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= DOR ================= -->
+    <section class="pain section" id="dor">
+      <div class="shell">
+        <div class="pain-top">
+          <div class="pain-head reveal">
+            <p class="kicker">O problema</p>
+            <h2>Seu dinheiro está investido, mas <span class="mark">a favor de quem?</span></h2>
+            <p class="lead">No modelo tradicional, quem cuida da sua carteira também ganha comissão para vender produtos. O resultado é uma recomendação que nem sempre olha para os seus objetivos, e um custo que você não enxerga.</p>
+          </div>
+          <a class="press-clip reveal" href="https://neofeed.com.br/wealth-management/bate-e-rebate-o-custo-das-comissoes-escondidas-dos-investimentos" target="_blank" rel="noopener">
+            <img src="assets/img/neofeed-rebate.png" alt="Matéria do NeoFeed: Bate e rebate, o custo das comissões escondidas dos investimentos" width="1496" height="458" loading="lazy" decoding="async">
+            <span class="press-clip-note"><i class="bi bi-newspaper" aria-hidden="true"></i> O rebate é a comissão que a instituição paga a quem indica o produto. Muitas vezes, você deixa dinheiro na mesa sem saber. <span class="press-clip-src">Ler no NeoFeed &rarr;</span></span>
+          </a>
+        </div>
+        <ul class="pain-grid reveal">
+          <li class="pain-card">
+            <span class="pain-ico"><i class="bi bi-arrow-left-right"></i></span>
+            <h3>Conflito de interesses</h3>
+            <p>Comissões, rebates e spreads ocultos fazem a recomendação nascer da prateleira de produtos, não do que é melhor para você.</p>
+          </li>
+          <li class="pain-card">
+            <span class="pain-ico"><i class="bi bi-hourglass-split"></i></span>
+            <h3>Sem tempo para decidir</h3>
+            <p>Acompanhar mercado, comparar ativos e rebalancear a carteira exige tempo e método que a rotina de quem produz não permite.</p>
+          </li>
+          <li class="pain-card">
+            <span class="pain-ico"><i class="bi bi-diagram-2"></i></span>
+            <h3>Patrimônio sem estratégia</h3>
+            <p>Investimentos soltos, em várias instituições, sem uma tese que conecte cada aplicação a um objetivo de vida concreto.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= A NOSSA SOLUÇÃO + GOAL BASED INVESTING ================= -->
+    <section class="ps section" id="solucao">
+      <div class="ps-orbs" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="shell">
+        <div class="ps-head reveal">
+          <p class="kicker kicker-light">A nossa solução</p>
+          <h2>A expertise é nossa, <span class="mark">o controle é seu.</span></h2>
+          <p class="ps-lead">A consultoria de investimentos é independente das instituições financeiras: não temos contrato de exclusividade com nenhuma corretora ou banco. Recomendamos as melhores estratégias e produtos, e cabe a você decidir se segue os conselhos. Nossa remuneração é uma taxa fixa, independente do produto contratado, sem metas nem comissões de venda. O que é melhor para você é melhor para nós.</p>
+          <div class="method-seal">
+            <span class="method-seal-body">
+              <strong>Goal Based Investing</strong>
+              <span>Nossa filosofia: cada carteira é desenhada para realizar um objetivo de vida definido.</span>
+            </span>
+          </div>
+        </div>
+        <div class="ps-pillars reveal">
+          <article class="ps-pillar">
+            <span class="ps-pillar-ico"><i class="bi bi-eye"></i></span>
+            <h3>Transparência</h3>
+            <p>Você aprova 100% das operações e sabe exatamente o que paga. Uma taxa única, sem rebates nem custos escondidos.</p>
+          </article>
+          <article class="ps-pillar">
+            <span class="ps-pillar-ico"><i class="bi bi-compass"></i></span>
+            <h3>Liberdade</h3>
+            <p>Você mantém o banco e a corretora que já usa. A gente cuida da estratégia, com total independência de instituições.</p>
+          </article>
+          <article class="ps-pillar">
+            <span class="ps-pillar-ico"><i class="bi bi-stars"></i></span>
+            <h3>Inovação</h3>
+            <p>Metodologia própria, o app Meu Plano e acesso a oportunidades no Brasil e no exterior, sempre alinhados ao seu objetivo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= AUTORIDADE (experiência + números + SELO) ================= -->
+    <section class="authority section" id="autoridade">
+      <div class="shell">
+        <div class="authority-inner">
+          <div class="authority-copy reveal">
+            <p class="kicker">Nossa experiência</p>
+            <h2>Entre as maiores empresas<br>de consultoria de investimentos<br><span class="mark">do Brasil.</span></h2>
+            <p class="lead">Experiência, transparência e segurança para obter os melhores resultados. Cuidamos de mais de R$ 1 bilhão em patrimônio, com um padrão de excelência reconhecido pelos clientes: NPS 95 de satisfação.</p>
+            <ul class="authority-pills">
+              <li><i class="bi bi-shield-check"></i> Credenciada na CVM</li>
+              <li><i class="bi bi-percent"></i> 100% de cashback de comissões</li>
+              <li><i class="bi bi-cash-coin"></i> Taxa fixa</li>
+            </ul>
+          </div>
+          <div class="authority-aside reveal">
+            <blockquote class="authority-quote">
+              <img class="authority-seal-img" src="assets/img/selo-confiavel.png" alt="Selo Consultoria de Investimentos Mais Confiável do Brasil" width="120" height="123" loading="lazy" decoding="async">
+              <p>Consultoria de Investimentos Mais Confiável do Brasil.</p>
+              <span>O nosso compromisso é com os seus objetivos de vida, não com a prateleira de produtos.</span>
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="stats-row reveal">
+          <div class="stat">
+            <div class="num"><span class="pre">+ R$</span><span data-count="1">1</span> <span class="unit">bi</span></div>
+            <p class="cap">de patrimônio aos nossos cuidados</p>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="pre">+</span><span data-count="500">500</span></div>
+            <p class="cap">famílias atendidas em todo o Brasil</p>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="pre">NPS</span> <span data-count="95">95</span></div>
+            <p class="cap">de satisfação entre nossos clientes</p>
+          </div>
+          <div class="stat">
+            <div class="num"><span class="pre">+</span><span data-count="400">400</span> <span class="unit">mil</span></div>
+            <p class="cap">pessoas impactadas em nossas redes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= COMO FUNCIONA: metodologia MP 360 ================= -->
+    <section class="steps section" id="como-funciona">
+      <div class="shell">
+        <div class="steps-head reveal">
+          <p class="kicker">Como funciona</p>
+          <h2>Do seu objetivo à carteira certa,<br><span class="mark">em um ciclo que nunca para.</span></h2>
+          <p class="lead">O consultor percorre um método próprio, o MP 360, que parte dos seus objetivos de vida, monta a carteira ideal para eles e monitora tudo continuamente, ajustando a rota conforme a vida acontece.</p>
+        </div>
+        <ol class="steps-grid reveal" style="grid-template-columns:repeat(3,1fr)">
+          <li class="step-card">
+            <span class="step-ico"><i class="bi bi-clipboard-data"></i></span>
+            <h3>Perfil e objetivos</h3>
+            <p>O consultor identifica o seu perfil de investidor e os seus objetivos financeiros, com um raio-x completo da sua situação atual.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-ico"><i class="bi bi-diagram-3"></i></span>
+            <h3>Estratégia e carteira</h3>
+            <p>Com asset allocation e seleção de ativos (stock picking), montamos a carteira recomendada, desenhada para cada objetivo definido.</p>
+          </li>
+          <li class="step-card">
+            <span class="step-ico"><i class="bi bi-arrow-repeat"></i></span>
+            <h3>Monitoria contínua</h3>
+            <p>Acompanhamos a carteira e propomos ajustes sempre que necessário, com você aprovando 100% das operações.</p>
+          </li>
+        </ol>
+        <p class="steps-note reveal"><i class="bi bi-infinity"></i> Filosofia de longo prazo: a construção do patrimônio acontece ao longo dos anos, com o consultor sempre ao seu lado.</p>
+      </div>
+    </section>
+
+    <!-- ================= GOAL BASED INVESTING ================= -->
+    <section class="gbi section" id="goal-based-investing" style="background:var(--mist)">
+      <div class="shell">
+        <div class="gbi-head reveal">
+          <p class="kicker">Investimentos por objetivos</p>
+          <h2>Cada objetivo de vida, <span class="mark">uma estratégia própria.</span></h2>
+          <p class="lead">No Goal Based Investing, sua carteira não é uma só: cada meta ganha uma alocação desenhada para o seu horizonte e o seu nível de risco. Segurança para o hoje, crescimento para o amanhã. Você acompanha o avanço de cada objetivo, meta a meta.</p>
+          <div class="method-seal gbi-seal">
+            <span class="method-seal-body">
+              <strong>Goal Based Investing</strong>
+              <span>Investir com um propósito claro para cada parte do seu patrimônio.</span>
+            </span>
+          </div>
+        </div>
+
+        <ul class="gbi-goals reveal">
+          <li class="gbi-goal">
+            <span class="gbi-goal-ico"><i class="bi bi-shield-plus"></i></span>
+            <h3>Segurança</h3>
+            <span class="gbi-goal-h">Imediato</span>
+            <p>Reserva e liquidez para imprevistos, com foco total em preservação e estabilidade.</p>
+          </li>
+          <li class="gbi-goal">
+            <span class="gbi-goal-ico"><i class="bi bi-flag"></i></span>
+            <h3>Projetos</h3>
+            <span class="gbi-goal-h">Até 5 anos</span>
+            <p>Metas de médio prazo, como um imóvel ou a educação dos filhos, com risco controlado.</p>
+          </li>
+          <li class="gbi-goal">
+            <span class="gbi-goal-ico"><i class="bi bi-rocket-takeoff"></i></span>
+            <h3>Crescimento</h3>
+            <span class="gbi-goal-h">Acima de 5 anos</span>
+            <p>Construção de patrimônio no longo prazo, com mais exposição a ativos de maior retorno.</p>
+          </li>
+          <li class="gbi-goal">
+            <span class="gbi-goal-ico"><i class="bi bi-cash-stack"></i></span>
+            <h3>Renda</h3>
+            <span class="gbi-goal-h">Perpetuidade</span>
+            <p>Uma carteira desenhada para gerar renda recorrente e sustentar o seu padrão de vida.</p>
+          </li>
+        </ul>
+
+        <div class="gbi-track reveal">
+          <p class="gbi-track-title"><i class="bi bi-bullseye"></i> E você acompanha cada meta, no seu tempo</p>
+          <ul class="gbi-metas">
+            <li class="gbi-meta">
+              <img src="assets/img/meta-casa.png" alt="Meta Casa própria no aplicativo Meu Plano, com 80% do objetivo alcançado" loading="lazy" width="1122" height="1402">
+            </li>
+            <li class="gbi-meta">
+              <img src="assets/img/meta-educacao.png" alt="Meta Educação dos filhos no aplicativo Meu Plano, com 40% do objetivo alcançado" loading="lazy" width="1122" height="1402">
+            </li>
+            <li class="gbi-meta">
+              <img src="assets/img/meta-aposentadoria.png" alt="Meta Aposentadoria no aplicativo Meu Plano, com 20% do objetivo alcançado" loading="lazy" width="1122" height="1402">
+            </li>
+          </ul>
+          <p class="gbi-track-note"><i class="bi bi-phone"></i> Acompanhe o avanço de cada objetivo em tempo real pelo aplicativo <b class="gbi-track-app">Meu Plano</b>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONSULTORIA x ASSESSORIA ================= -->
+    <section class="steps section" id="comparativo" style="background:var(--paper)">
+      <div class="shell">
+        <div class="steps-head reveal">
+          <p class="kicker">A diferença que muda tudo</p>
+          <h2>Modelo <span class="mark">transparente.</span></h2>
+          <p class="lead">Os dois modelos parecem iguais na largada, mas são movidos por incentivos opostos. Um vive do serviço prestado a você, o outro vive da comissão dos produtos vendidos.</p>
+        </div>
+        <div class="compare-grid reveal">
+          <article class="compare-card compare-card-us">
+            <p class="compare-tag">Consultoria Meu Patrimônio</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Taxa fixa, remuneração única</li>
+              <li><i class="bi bi-check-lg"></i> Alinhamento de interesses</li>
+              <li><i class="bi bi-check-lg"></i> 100% de cashback de comissões</li>
+              <li><i class="bi bi-check-lg"></i> Recomendação de produtos</li>
+              <li><i class="bi bi-check-lg"></i> Você aprova cada operação</li>
+            </ul>
+          </article>
+          <article class="compare-card compare-card-them">
+            <p class="compare-tag">Assessoria e bancos</p>
+            <ul>
+              <li><i class="bi bi-x-lg"></i> Comissões sobre a venda</li>
+              <li><i class="bi bi-x-lg"></i> Conflito de interesses</li>
+              <li><i class="bi bi-x-lg"></i> Rebates e spreads ocultos</li>
+              <li><i class="bi bi-x-lg"></i> Venda de produtos</li>
+              <li><i class="bi bi-x-lg"></i> Foco na receita</li>
+            </ul>
+          </article>
+        </div>
+        <p class="plans-note reveal"><i class="bi bi-cash-stack"></i> Não há patrimônio mínimo para começar. A taxa depende do montante e do perfil da carteira, e é a nossa única remuneração.</p>
+      </div>
+    </section>
+
+    <!-- ================= ESTUDO DE CASO MUNDIAL ================= -->
+    <section class="casestudy section" id="estudo-de-caso" style="background:var(--mist)">
+      <div class="shell">
+        <div class="cs-head reveal">
+          <p class="kicker"><i class="bi bi-globe-americas"></i> Estudo de caso mundial</p>
+          <h2>Commission-Based <span class="cs-vs">x</span> <span class="mark">Fee-Based.</span></h2>
+          <p class="lead">Os benefícios de um modelo transparente e alinhado. Estudos internacionais comparam o modelo de <strong>assessorias e bancos</strong>, remunerado por comissão (Commission-Based), com o modelo de <strong>consultoria</strong> (Fee-Based).</p>
+        </div>
+
+        <div class="cs-body reveal">
+          <div class="cs-chart" aria-label="Comparação de patrimônio: Fee-Based acumula cerca do dobro do Commission-Based">
+            <div class="cs-bars">
+              <div class="cs-bar-group">
+                <span class="cs-bar-label">Commission-Based<small>Assessorias e bancos</small></span>
+                <div class="cs-bar cs-bar-low"></div>
+              </div>
+              <div class="cs-bar-group">
+                <span class="cs-bar-label">Fee-Based<small>Consultoria independente</small></span>
+                <div class="cs-bar cs-bar-high"><span class="cs-bar-multi">2x</span></div>
+              </div>
+            </div>
+            <div class="cs-baseline"></div>
+            <p class="cs-axis">Patrimônio acumulado</p>
+          </div>
+
+          <ul class="cs-points">
+            <li class="cs-point">
+              <span class="cs-check"><i class="bi bi-check2"></i></span>
+              <div>
+                <h3>Redução de custos dos produtos</h3>
+                <p class="cs-point-num">Até 30% a menos</p>
+                <p class="cs-point-desc">Fim das comissões na cabeça (1% a 5%) e das recorrentes (0,25% a 1%).</p>
+              </div>
+            </li>
+            <li class="cs-point">
+              <span class="cs-check"><i class="bi bi-check2"></i></span>
+              <div>
+                <h3>Ganho médio ao ano superior</h3>
+                <p class="cs-point-num">Até +2,0% ao ano</p>
+                <p class="cs-point-desc">Melhor estratégia de alocação e seleção de produtos.</p>
+              </div>
+            </li>
+            <li class="cs-point">
+              <span class="cs-check"><i class="bi bi-check2"></i></span>
+              <div>
+                <h3>Impacto no longo prazo</h3>
+                <p class="cs-point-num">Patrimônio até 2x maior em até 30 anos</p>
+                <p class="cs-point-desc">Produtos mais baratos, menor giro e maior diversificação.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <p class="cs-sources reveal">Fontes: Sebastian, Noth &amp; Grafe (2023); Meyer &amp; Uhr; Hackethal et al.; FCA (RDR); AFM (Holanda); European Commission; FINRA.</p>
+      </div>
+    </section>
+
+    <!-- ================= INDEPENDÊNCIA (órbita de instituições) ================= -->
+    <section class="independence section" id="independencia">
+      <div class="shell">
+        <div class="independence-head reveal">
+          <p class="kicker">Independência</p>
+          <h2>Funciona com o banco e a corretora que <span class="mark">você já usa.</span></h2>
+          <p class="lead">Você mantém as suas instituições, um mesmo consultor cuida de tudo. Sem comissões e com 100% de cashback: devolvemos o valor que os escritórios de assessoria e corretoras receberiam.</p>
+        </div>
+        <div class="mp-orbit reveal" aria-label="Meu Patrimônio conectada a instituições financeiras">
+          <div class="mp-orbit-desktop">
+            <div class="mp-layer mp-layer-outer">
+              <div class="mp-ring"></div>
+              <div class="mp-rotor mp-spin-cw">
+                <div class="mp-item" style="--angle:0deg;--radius:24em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-image-74.png" alt="Morgan Stanley" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:60deg;--radius:24em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/jpmorgan.png" alt="J.P. Morgan" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:120deg;--radius:24em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/interactive-brokers.png" alt="Interactive Brokers" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:180deg;--radius:24em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/nomad.png" alt="Nomad" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:240deg;--radius:24em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/avenue.png" alt="Avenue" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:300deg;--radius:24em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/c6-bank.png" alt="C6 Bank" loading="lazy" decoding="async"></div></div>
+              </div>
+            </div>
+            <div class="mp-layer mp-layer-middle">
+              <div class="mp-ring"></div>
+              <div class="mp-rotor mp-spin-cw">
+                <div class="mp-item" style="--angle:-36deg;--radius:18em"><div class="mp-counter mp-spin-ccw"><img class="sq" src="assets/orbit/t-group-2.png" alt="Itaú" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:36deg;--radius:18em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-vector.png" alt="Bradesco" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:108deg;--radius:18em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-group.png" alt="Ágora Investimentos" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:180deg;--radius:18em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-group-1.png" alt="Banco do Brasil" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:252deg;--radius:18em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/inter.png" alt="Inter" loading="lazy" decoding="async"></div></div>
+              </div>
+            </div>
+            <div class="mp-layer mp-layer-inner">
+              <div class="mp-ring"></div>
+              <div class="mp-rotor mp-spin-cw">
+                <div class="mp-item" style="--angle:-54deg;--radius:12.5em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-group-3.png" alt="XP Investimentos" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:18deg;--radius:12.5em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-vector-1.png" alt="BTG Pactual" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:90deg;--radius:12.5em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-vector-2.png" alt="Santander" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:162deg;--radius:12.5em"><div class="mp-counter mp-spin-ccw"><img src="assets/orbit/t-desk.png" alt="Safra" loading="lazy" decoding="async"></div></div>
+                <div class="mp-item" style="--angle:234deg;--radius:12.5em"><div class="mp-counter mp-spin-ccw"><img class="sq" src="assets/orbit/genial.png" alt="Genial Investimentos" loading="lazy" decoding="async"></div></div>
+              </div>
+            </div>
+            <div class="mp-core"><img src="assets/orbit/owl-white.png" alt="Meu Patrimônio" loading="lazy" decoding="async"></div>
+          </div>
+          <div class="mp-orbit-mobile">
+            <img class="sq" src="assets/orbit/t-group-2.png" alt="Itaú" loading="lazy" decoding="async"><img src="assets/orbit/t-group-3.png" alt="XP Investimentos" loading="lazy" decoding="async"><img src="assets/orbit/t-vector-2.png" alt="Santander" loading="lazy" decoding="async"><img src="assets/orbit/t-vector-1.png" alt="BTG Pactual" loading="lazy" decoding="async"><img src="assets/orbit/t-vector.png" alt="Bradesco" loading="lazy" decoding="async"><img src="assets/orbit/t-group.png" alt="Ágora Investimentos" loading="lazy" decoding="async"><img src="assets/orbit/t-group-1.png" alt="Banco do Brasil" loading="lazy" decoding="async"><img src="assets/orbit/t-desk.png" alt="Safra" loading="lazy" decoding="async"><img src="assets/orbit/t-image-74.png" alt="Morgan Stanley" loading="lazy" decoding="async"><img src="assets/orbit/jpmorgan.png" alt="J.P. Morgan" loading="lazy" decoding="async"><img src="assets/orbit/interactive-brokers.png" alt="Interactive Brokers" loading="lazy" decoding="async"><img src="assets/orbit/inter.png" alt="Inter" loading="lazy" decoding="async"><img src="assets/orbit/c6-bank.png" alt="C6 Bank" loading="lazy" decoding="async"><img class="sq" src="assets/orbit/genial.png" alt="Genial Investimentos" loading="lazy" decoding="async"><img src="assets/orbit/nomad.png" alt="Nomad" loading="lazy" decoding="async"><img src="assets/orbit/avenue.png" alt="Avenue" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="platform-flags reveal"><svg class="flag" viewBox="0 0 28 20" role="img" aria-label="Brasil"><rect width="28" height="20" rx="2" fill="#009c3b"/><path d="M14 3l10 7-10 7L4 10z" fill="#ffdf00"/><circle cx="14" cy="10" r="3.4" fill="#002776"/></svg><svg class="flag" viewBox="0 0 28 20" role="img" aria-label="Estados Unidos"><rect width="28" height="20" rx="2" fill="#fff"/><g fill="#b22234"><rect width="28" height="1.54" y="0"/><rect width="28" height="1.54" y="3.08"/><rect width="28" height="1.54" y="6.15"/><rect width="28" height="1.54" y="9.23"/><rect width="28" height="1.54" y="12.31"/><rect width="28" height="1.54" y="15.38"/><rect width="28" height="1.54" y="18.46"/></g><rect width="12" height="10.77" fill="#3c3b6e"/></svg><span class="flag-txt">Acesso Brasil + EUA</span></div>
+      </div>
+    </section>
+
+    <!-- ================= PARA QUEM É ================= -->
+    <section class="mods section" id="para-quem" style="background:var(--mist)">
+      <div class="shell">
+        <div class="mods-head reveal">
+          <p class="kicker">Para quem é</p>
+          <h2>A solução ideal para <span class="mark">você que</span></h2>
+        </div>
+        <ul class="fit-grid reveal">
+          <li class="fit-item"><i class="bi bi-shield-check"></i><span>Deseja proteger e impulsionar o seu patrimônio</span></li>
+          <li class="fit-item"><i class="bi bi-hourglass-split"></i><span>Não tem tempo para estudos e decisões de investimentos</span></li>
+          <li class="fit-item"><i class="bi bi-person-badge"></i><span>Quer um atendimento exclusivo e especializado</span></li>
+          <li class="fit-item"><i class="bi bi-sliders"></i><span>Quer gerir o patrimônio com eficiência e transparência</span></li>
+          <li class="fit-item"><i class="bi bi-building-up"></i><span>Deseja construir um patrimônio sólido a longo prazo</span></li>
+          <li class="fit-item"><i class="bi bi-emoji-smile"></i><span>Quer desfrutar a vida enquanto cuidamos do resto</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= DEPOIMENTO ================= -->
+    <section class="testi section" id="depoimento">
+      <div class="shell">
+        <div class="testi-head reveal">
+          <p class="kicker">Nossa relação é pautada pela confiança</p>
+          <h2>Quem já investe <span class="mark">com a gente.</span></h2>
+        </div>
+        <div class="testi-showcase reveal">
+          <figure class="testi-video">
+            <button class="testi-video-btn" type="button" data-yt="7-9PUuIpELQ" aria-label="Assistir ao depoimento do Bruno">
+              <img src="assets/img/depo-bruno.jpg" alt="Depoimento em vídeo de Bruno, cliente Meu Patrimônio" loading="lazy" decoding="async">
+              <span class="testi-video-play"><i class="bi bi-play-fill" aria-hidden="true"></i></span>
+              <span class="testi-video-tag"><i class="bi bi-camera-video-fill" aria-hidden="true"></i> Depoimento em vídeo</span>
+            </button>
+            <figcaption>
+              <span class="ava">BR</span>
+              <span>
+                <strong>Bruno</strong>
+                <span>Médico, Vitória-ES</span>
+              </span>
+            </figcaption>
+          </figure>
+          <ul class="testi-stack">
+            <li><figure class="testi">
+              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+              <blockquote>Empresa que tem o compromisso com o cliente, o que gera confiança. Isso pra mim é fundamental.</blockquote>
+              <figcaption class="testi-foot">
+                <span class="ava">JC</span>
+                <span>
+                  <strong>Juliana Celin</strong>
+                  <span>Médica, Belo Horizonte-MG</span>
+                </span>
+              </figcaption>
+            </figure></li>
+            <li><figure class="testi">
+              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+              <blockquote>A cada dia tenho mais certeza de ter escolhido o parceiro correto para alcançar os meus objetivos.</blockquote>
+              <figcaption class="testi-foot">
+                <span class="ava">GS</span>
+                <span>
+                  <strong>Gustavo Salgado</strong>
+                  <span>Engenheiro, Curitiba-PR</span>
+                </span>
+              </figcaption>
+            </figure></li>
+            <li><figure class="testi">
+              <div class="quote-mark" aria-hidden="true">&ldquo;</div>
+              <blockquote>Tenho certeza que a Meu Patrimônio fará a gestão impecável, implementando com lisura o investimento estratégico traçado com toda a atenção.</blockquote>
+              <figcaption class="testi-foot">
+                <span class="ava">AB</span>
+                <span>
+                  <strong>Ademir Benedito</strong>
+                  <span>Empresário, Ribeirão Preto-SP</span>
+                </span>
+              </figcaption>
+            </figure></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CTA FINAL: FALE COM UM CONSULTOR + MAPA ================= -->
+    <section class="close section" id="agendar">
+      <div class="shell close-inner">
+        <div class="close-copy reveal">
+          <p class="kicker">Vamos conversar</p>
+          <h2 class="close-title"><span class="ct-l1">A gente cuida de tudo enquanto</span><br><span class="mark">você desfruta suas conquistas.</span></h2>
+          <p class="lead">Sem compromisso e sem oferta de produto. Converse com um consultor e descubra como fazer o seu patrimônio trabalhar para os seus objetivos.</p>
+          <div class="close-actions">
+            <a class="btn btn-primary" href="https://wa.me/5513981191955?text=Ol%C3%A1%2C+vim+do+site+e+quero+falar+sobre+consultoria+de+investimentos%21" target="_blank" rel="noopener">Fale com um Consultor</a>
+          </div>
+        </div>
+        <div class="reach-map reveal">
+          <div class="reach-svg" data-br-map></div>
+          <div class="reach-tip" data-map-tip hidden></div>
+          <div class="reach-legend">
+            <span class="lg lg-sede"><i></i> Sede</span>
+            <span class="lg lg-esc"><i></i> Escritórios</span>
+            <span class="lg lg-con"><i></i> Consultores</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="faq section" id="faq">
+      <div class="shell faq-layout">
+        <div class="faq-head reveal">
+          <p class="kicker">Perguntas frequentes</p>
+          <h2>Ainda com <span class="mark">dúvidas?</span></h2>
+          <p class="lead">O básico sobre como funciona a consultoria de investimentos.</p>
+        </div>
+
+        <ul class="faq-list reveal">
+          <li class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">O que é a consultoria de investimentos?<i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+            <div class="faq-a"><p>É o serviço em que um especialista da Meu Patrimônio, após analisar o seu perfil e os seus objetivos financeiros, auxilia você a tomar as melhores decisões sobre os seus investimentos, com total isenção e alinhamento de interesses.</p></div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">Como funciona a consultoria?<i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+            <div class="faq-a"><p>Em três etapas: primeiro, o consultor identifica o seu perfil e os seus objetivos; depois, desenvolve uma estratégia personalizada para montar a sua carteira de ativos; por fim, monitora a carteira e propõe ajustes sempre que necessário, com você aprovando cada operação.</p></div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">Qual é a filosofia de investimentos da Meu Patrimônio?<i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+            <div class="faq-a"><p>É baseada no longo prazo. Acreditamos que o patrimônio se constrói ao longo dos anos, por isso usamos alocação de ativos (asset allocation), investimentos por objetivos (Goal Based Investing) e seleção de ativos (stock picking).</p></div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">Quais ativos terei na minha carteira?<i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+            <div class="faq-a"><p>Depende do seu perfil e dos seus objetivos. A carteira pode conter renda fixa, títulos públicos, ações, ETFs, fundos imobiliários, fundos de investimento e até aplicações no exterior. Se você já possui ativos, analisamos a sua carteira e mantemos o que fizer sentido dentro da estratégia.</p></div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">A Meu Patrimônio é uma corretora?<i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+            <div class="faq-a"><p>Não. Somos uma Consultoria de Investimentos autorizada pela CVM. Não recebemos comissões pela venda de produtos, o que nos isenta de conflitos de interesse. Nossa remuneração vem exclusivamente do serviço prestado ao cliente.</p></div>
+          </li>
+          <li class="faq-item">
+            <button type="button" class="faq-q" aria-expanded="false">Como funciona o cashback e qual a taxa cobrada?<i class="bi bi-plus-lg" aria-hidden="true"></i></button>
+            <div class="faq-a"><p>Devolvemos 100% do valor que os escritórios de assessoria e corretoras receberiam. Não há patrimônio mínimo. A taxa de consultoria depende do montante e do perfil da carteira, é a nossa única remuneração e a cobrança ocorre mensalmente sobre o valor total da carteira.</p></div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER (padrão da home) ================= -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand" href="../"><img class="brand-owl" src="assets/img/logo-coruja-branca.png" alt="Meu Patrimônio"></a>
+          <p>Consultoria de investimentos credenciada na CVM, remunerada por taxa fixa e sem conflito de interesses.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/meupatrimoniopf" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/meupatrimonio.nacional/" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.youtube.com/@Gabriel_Liberato" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Quem Somos</h5>
+          <a href="../quem-somos/">Quem somos</a>
+          <a href="../quem-somos/">Nossos valores</a>
+          <a href="../quem-somos/">Nosso time</a>
+          <a href="../rede/">Rede Meu Patrimônio</a>
+        </div>
+        <div class="footer-col">
+          <h5>O Que Fazemos</h5>
+          <a href="../educacao/">Educação Financeira</a>
+          <a href="../planejamento/">Planejamento Financeiro</a>
+          <a href="../consultoria/">Consultoria de Investimentos</a>
+          <a href="../family-office/">Family Office</a>
+          <a href="https://meupatrimonio.com/indicar-e-ganhar-e-muito-facil/">Indique e Ganhe</a>
+        </div>
+        <div class="footer-col">
+          <h5>Ecossistema</h5>
+          <a href="https://meupatrimonio.com/blog/">Blog</a>
+          <a href="https://www.youtube.com/@Gabriel_Liberato">YouTube</a>
+          <a href="https://meupatrimonio.com/glossario-financeiro/">Glossário Financeiro</a>
+          <a href="../educacao/">Materiais Gratuitos</a>
+          <a href="https://appmeuplano.com/restrito/login">Meu Plano</a>
+        </div>
+        <div class="footer-col">
+          <h5>Seja um Parceiro</h5>
+          <a href="https://meupatrimonio.com/parceiros/">Seja um consultor</a>
+          <a href="../rede/">Escritório parceiro</a>
+          <a href="https://meupatrimonio.com/formulario-seja-um-parceiro-mp/">Quero ser parceiro</a>
+        </div>
+      </div>
+      <div class="footer-addr">
+        <div class="addr">
+          <p class="addr-city"><i class="bi bi-geo-alt-fill"></i> Vitória, ES <span class="addr-tag">Sede</span></p>
+          <p>Av. Nossa Sra. dos Navegantes, 451, Sl 605, Enseada do Suá, Vitória, ES, 29050-335</p>
+        </div>
+        <div class="addr">
+          <p class="addr-city"><i class="bi bi-geo-alt-fill"></i> Santos, SP</p>
+          <p>Av. Conselheiro Nébias, 754, Sala 1322, Boqueirão, Santos, SP, 11045-002, Edifício Helbor Vila Rica</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Meu Patrimônio. Todos os direitos reservados.</span>
+        <span class="legal">
+          <a href="https://meupatrimonio.com/termos-de-uso/">Termos de uso</a>
+          <a href="https://meupatrimonio.com/politica-de-privacidade/">Política de privacidade</a>
+        </span>
+      </div>
+      <p class="footer-legal-note">Material informativo e institucional. Não constitui recomendação personalizada de investimento. A Meu Patrimônio é uma consultoria de investimentos credenciada na CVM.</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flutuante -->
+  <a class="wa-float" href="https://wa.me/5513981191955?text=Ol%C3%A1%2C+vim+do+site+e+quero+falar+sobre+consultoria+de+investimentos%21" target="_blank" rel="noopener" aria-label="Converse com o nosso time no WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.5-.5c.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 .9-1 2.3 0 1.3 1 2.6 1.1 2.8.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.5-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg>
+  </a>
+
+  <script src="app.js?v=25" defer></script>
+</body>
+</html>

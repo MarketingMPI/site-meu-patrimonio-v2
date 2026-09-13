@@ -1,0 +1,5 @@
+_shots/
+page.html
+shot*.py
+__pycache__/
+.DS_Store

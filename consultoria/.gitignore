@@ -1,0 +1,8 @@
+# Screenshots de validação (Playwright)
+fo_full.png
+sec_*.png
+screenshot-validate.py
+
+# Sistema
+.DS_Store
+Thumbs.db

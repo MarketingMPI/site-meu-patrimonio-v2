@@ -1,0 +1,26 @@
+# SITE MEU PATRIMONIO v2
+
+Site institucional unificado da Meu Patrimônio (redesign v2). A **Home** fica na raiz e cada landing page vive em sua subpasta, com navegação interna religada por links relativos.
+
+## Estrutura
+
+| Rota | Página |
+|------|--------|
+| `/` | Home (B2C) |
+| `/planejamento/` | Planejamento Financeiro |
+| `/consultoria/` | Consultoria de Investimentos (Goal Based Investing) |
+| `/family-office/` | Family Office |
+| `/rede/` | Rede Meu Patrimônio |
+| `/educacao/` | Educação Financeira |
+| `/quem-somos/` | Quem Somos |
+
+## Publicação
+
+Hospedado via **GitHub Pages** em https://marketingmpi.github.io/site-meu-patrimonio-v2/
+Todo push na `main` republica automaticamente (~1 min).
+
+## Origem
+
+Consolidação dos repositórios de redesign individuais:
+MP-Home-Redesigner, LP-planejamento-redesigner, LP-Consultoria, LP-Family-Office,
+rede-mp-lp, LP-educacao-financeira-redesigner, LP-Quem-Somos.

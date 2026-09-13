@@ -1,0 +1,23 @@
+# Sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*~
+
+# Arquivos de trabalho / rascunho
+_*.html
+_*.css
+_*.js
+_*.py
+_bak-*
+
+# Logs e temporários
+*.log
+tmp/
