@@ -19,6 +19,11 @@ Site institucional unificado da Meu Patrimônio (redesign v2). A **Home** fica n
 Hospedado via **GitHub Pages** em https://marketingmpi.github.io/site-meu-patrimonio-v2/
 Todo push na `main` republica automaticamente (~1 min).
 
+## Desenvolvimento no Replit
+
+Use o workflow **Start application**. Ele serve o site estático em `0.0.0.0:5000`
+com o servidor HTTP do Python, sem dependências adicionais.
+
 ## Origem
 
 Consolidação dos repositórios de redesign individuais:
