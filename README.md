@@ -24,6 +24,19 @@ Todo push na `main` republica automaticamente (~1 min).
 Use o workflow **Start application**. Ele serve o site estático em `0.0.0.0:5000`
 com o servidor HTTP do Python, sem dependências adicionais.
 
+## Validação de links e assets
+
+Antes de publicar, execute:
+
+```sh
+python3 scripts/check-site.py
+```
+
+O comando verifica as sete rotas, links internos, âncoras, imagens, vídeos,
+fontes, folhas de estilo e scripts locais. URLs externas não são acessadas.
+Quando encontra um problema, informa a rota afetada e a URL que não pôde ser
+resolvida.
+
 ## Origem
 
 Consolidação dos repositórios de redesign individuais:

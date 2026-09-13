@@ -1,0 +1,1 @@
+- [Static-site resource validation](static-site-resource-validation.md) — nested static routes need route-aware checks for HTML, CSS, JavaScript, and shared assets.

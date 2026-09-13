@@ -148,7 +148,7 @@ p{margin:0}
    ============================================================ */
 .hero{position:relative;isolation:isolate;display:flex;align-items:center;margin-top:0;padding-top:var(--head-h);overflow:hidden;
   min-height:clamp(640px,90svh,880px);
-  background:var(--deep) url('assets/img/hero-familia.jpg?v=4') center 22%/cover no-repeat}
+  background:var(--deep) url('../assets/img/hero-familia.jpg?v=4') center 22%/cover no-repeat}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
   background:linear-gradient(180deg,color-mix(in oklch,var(--deep) 45%,transparent) 0%,color-mix(in oklch,var(--deep) 20%,transparent) 30%,color-mix(in oklch,var(--deep) 55%,transparent) 70%,color-mix(in oklch,var(--deep) 88%,transparent) 100%)}
 .hero-inner{position:relative;z-index:1;width:var(--shell);display:flex;flex-direction:column;justify-content:flex-end;gap:0;padding-block:clamp(120px,20vh,220px) clamp(40px,6vh,72px)}

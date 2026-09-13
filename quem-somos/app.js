@@ -188,7 +188,7 @@ qsa('.video-poster').forEach(btn => {
   ];
   const ATIVOS = new Set([SEDE.uf, ...ESCRITORIOS.map(e => e.uf), ...CONSULTORES.map(c => c.uf)]);
 
-  fetch('assets/br-map.svg').then(r => r.text()).then(txt => {
+  fetch('../assets/br-map.svg').then(r => r.text()).then(txt => {
     host.innerHTML = txt;
     const svg = host.querySelector('svg');
     if (!svg) return;
