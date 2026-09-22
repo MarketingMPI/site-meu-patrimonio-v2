@@ -961,23 +961,23 @@ p{margin:0}
   background:#fff;
   color:#1c1c1c;
 }
-.glo-page .site-header{
-  background:var(--forest);
-  backdrop-filter:none;
-  box-shadow:0 1px 0 color-mix(in oklch,#fff 12%,transparent);
-}
+.glo-page .site-header,
 .glo-page .site-header.is-scrolled{
-  background:var(--forest);
-  box-shadow:0 8px 28px color-mix(in oklch,var(--deep) 24%,transparent);
+  background:transparent;
+  backdrop-filter:none;
+  box-shadow:none;
+}
+.glo-page .site-header .brand-owl{
+  filter:brightness(0) saturate(100%) invert(20%) sepia(31%) saturate(1788%) hue-rotate(122deg) brightness(91%) contrast(102%);
 }
 .glo-page .site-header .nav-item>a,
-.glo-page .site-header .nav-item>button{color:#fff}
+.glo-page .site-header .nav-item>button{color:var(--forest)}
 .glo-page .site-header .nav-item>a:hover,
 .glo-page .site-header .nav-item>button:hover{
-  color:#fff;
-  background:color-mix(in oklch,#fff 12%,transparent);
+  color:var(--forest);
+  background:var(--soft);
 }
-.glo-page .site-header .menu-toggle span{background:#fff}
+.glo-page .site-header .menu-toggle span{background:var(--forest)}
 .glo-page .desktop-nav a[aria-current="page"]{font-weight:700}
 .glo-page .submenu a[aria-current="page"]{
   color:var(--forest);
@@ -987,44 +987,54 @@ p{margin:0}
 .glo-page .mobile-menu a[aria-current="page"]{color:var(--forest);font-weight:700}
 
 .glo-hero{
-  padding:calc(var(--head-h) + clamp(70px,9vw,126px)) 0 clamp(58px,7vw,98px);
+  padding:calc(var(--head-h) + clamp(58px,7vw,96px)) 0 clamp(42px,5vw,68px);
   background:#fff;
+  text-align:center;
 }
 .glo-hero h1{
-  max-width:11ch;
+  max-width:none;
   color:var(--forest);
-  font-size:clamp(48px,8vw,104px);
+  font-size:clamp(46px,7vw,94px);
   font-weight:500;
-  line-height:.92;
+  line-height:.96;
   letter-spacing:-.055em;
+  white-space:nowrap;
 }
 
 .glo-alphabet{
   background:#fff;
-  border-block:1px solid var(--line);
 }
+.glo-alphabet .shell{
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.glo-alphabet .shell::-webkit-scrollbar{display:none}
 .glo-alpha-grid{
-  display:grid;
-  grid-template-columns:repeat(13,minmax(0,1fr));
-  gap:8px;
-  padding-block:22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:clamp(12px,1.2vw,20px);
+  width:max-content;
+  min-width:100%;
+  padding-block:20px;
 }
 .glo-alpha-link{
   display:grid;
   place-items:center;
-  min-height:46px;
-  border:1px solid color-mix(in oklch,var(--forest) 28%,transparent);
-  border-radius:6px;
+  min-width:18px;
+  min-height:32px;
+  padding:4px 0;
+  border:0;
+  border-radius:0;
   color:var(--forest);
-  font-size:14px;
+  font-size:13px;
   font-weight:700;
   line-height:1;
-  transition:background .2s ease,color .2s ease,border-color .2s ease,transform .2s ease;
+  transition:color .2s ease,transform .2s ease;
 }
 a.glo-alpha-link:hover{
-  background:var(--forest);
-  border-color:var(--forest);
-  color:#fff;
+  background:transparent;
+  color:var(--signal);
   transform:translateY(-2px);
 }
 a.glo-alpha-link:focus-visible,
@@ -1034,9 +1044,8 @@ a.glo-alpha-link:focus-visible,
   outline-offset:3px;
 }
 .glo-alpha-link.is-empty{
-  border-color:var(--line);
-  color:#aab6b1;
-  background:#fafcfb;
+  color:#b8c2be;
+  background:transparent;
 }
 
 .glo-content{
@@ -1153,15 +1162,15 @@ a.glo-alpha-link:focus-visible,
 .glo-page .site-footer{margin-top:0}
 
 @media(max-width:900px){
-  .glo-alpha-grid{grid-template-columns:repeat(9,minmax(0,1fr))}
-  .glo-hero{padding-top:calc(var(--head-h) + 68px)}
+  .glo-alpha-grid{gap:16px}
+  .glo-hero{padding-top:calc(var(--head-h) + 58px)}
 }
 @media(max-width:600px){
   .glo-content{max-width:calc(100vw - 32px)}
-  .glo-alpha-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;padding-block:16px}
-  .glo-alpha-link{min-height:42px;font-size:13px}
-  .glo-hero{padding:calc(var(--head-h) + 54px) 0 50px}
-  .glo-hero h1{font-size:clamp(44px,15vw,68px)}
+  .glo-alpha-grid{gap:16px;padding-block:14px}
+  .glo-alpha-link{min-height:32px;font-size:12px}
+  .glo-hero{padding:calc(var(--head-h) + 44px) 0 34px}
+  .glo-hero h1{font-size:clamp(28px,9.5vw,42px)}
   .glo-letter + .glo-letter{margin-top:78px}
   .glo-letter-head{padding-bottom:14px}
   .glo-letter-badge{font-size:62px}
@@ -1170,7 +1179,4 @@ a.glo-alpha-link:focus-visible,
   .glo-term{font-size:18px}
   .glo-a-inner{padding:0 4px 26px;font-size:15.5px;line-height:1.68}
   .glo-page .wa-float{display:none}
-}
-@media(max-width:380px){
-  .glo-alpha-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
