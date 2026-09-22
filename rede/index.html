@@ -3,6 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Base-URL guard: se a página for aberta sem a barra final (ex.: /rede em vez de /rede/),
+       os caminhos relativos (v3.css, v3.js, assets/...) quebrariam. Este script injeta uma
+       <base> apontando para a pasta correta, derivada do próprio pathname — portável entre
+       produção e o preview do GitHub Pages, sem hardcode. Roda só quando falta a barra. -->
+  <script>(function(){var p=location.pathname;if(p.charAt(p.length-1)!=="/")document.write('<base href="'+p+'/">');})();</script>
   <title>Rede Meu Patrimônio | Modelo Multi-plataforma</title>
   <meta name="description" content="A independência de uma consultoria com a estrutura de uma Rede nacional.">
   <link rel="canonical" href="https://rede.meupatrimonio.com/">
