@@ -2,7 +2,7 @@
  * Servidor do SITE MEU PATRIMONIO v2.
  *
  * Serve o site estático (Home na raiz + subpastas /planejamento, /consultoria,
- * /family-office, /rede, /educacao, /quem-somos) E hospeda o backend de
+ * /family-office, /rede, /educacao, /glossario, /quem-somos) E hospeda o backend de
  * captação da Rede em POST /api/application, que grava a candidatura no
  * Pipedrive (mesmo handler antes rodado como função serverless na Vercel).
  *
@@ -37,7 +37,7 @@ app.all(['/api/application', '/rede/api/application'], (req, res) =>
 // --- Trailing-slash: /rede -> /rede/ ------------------------------------------
 // O deploy estático anterior não redirecionava; sem a barra os caminhos
 // relativos quebravam. Replica o comportamento do GitHub Pages.
-const SECTIONS = ['planejamento', 'consultoria', 'family-office', 'rede', 'educacao', 'quem-somos'];
+const SECTIONS = ['planejamento', 'consultoria', 'family-office', 'rede', 'educacao', 'glossario', 'quem-somos'];
 for (const section of SECTIONS) {
   app.get(`/${section}`, (req, res) => res.redirect(301, `/${section}/`));
 }

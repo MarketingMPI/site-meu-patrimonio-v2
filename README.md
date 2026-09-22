@@ -12,6 +12,7 @@ Site institucional unificado da Meu Patrimônio (redesign v2). A **Home** fica n
 | `/family-office/` | Family Office |
 | `/rede/` | Rede Meu Patrimônio |
 | `/educacao/` | Educação Financeira |
+| `/glossario/` | Glossário Financeiro |
 | `/quem-somos/` | Quem Somos |
 
 ## Publicação
@@ -32,7 +33,7 @@ Antes de publicar, execute:
 python3 scripts/check-site.py
 ```
 
-O comando verifica as sete rotas, links internos, âncoras, imagens, vídeos,
+O comando verifica as oito rotas, links internos, âncoras, imagens, vídeos,
 fontes, folhas de estilo e scripts locais. URLs externas não são acessadas.
 Quando encontra um problema, informa a rota afetada e a URL que não pôde ser
 resolvida.
