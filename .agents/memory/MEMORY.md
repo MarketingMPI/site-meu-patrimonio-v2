@@ -1,1 +1,2 @@
 - [Static-site resource validation](static-site-resource-validation.md) — nested static routes need route-aware checks for HTML, CSS, JavaScript, and shared assets.
+- [Responsive visual checks](responsive-visual-checks.md) — wait for smooth-scroll and reveal transitions before judging section screenshots.

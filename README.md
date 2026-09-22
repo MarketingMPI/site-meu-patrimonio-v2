@@ -33,11 +33,10 @@ Antes de publicar, execute:
 python3 scripts/check-site.py
 ```
 
-O comando verifica as oito rotas, links internos, âncoras, imagens, vídeos,
+O comando verifica as sete rotas, links internos, âncoras, imagens, vídeos,
 fontes, folhas de estilo e scripts locais. URLs externas não são acessadas.
 Quando encontra um problema, informa a rota afetada e a URL que não pôde ser
 resolvida.
-
 ## Origem
 
 Consolidação dos repositórios de redesign individuais:

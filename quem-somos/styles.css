@@ -917,6 +917,7 @@ p{margin:0}
 }
 @media(max-width:600px){
   :root{--shell:calc(100vw - 32px)}
+  .mark,.about-head h2 .mark,.close-title .ct-l1{white-space:normal}
   .offer-grid,.stats-grid,.benefits-grid,.method-steps,.stats-row,.eco-cards{grid-template-columns:1fr}
   .logo-strip{grid-template-columns:repeat(2,1fr)}
   .logo-strip li{border-top:1px solid var(--line);border-left:1px solid var(--line)}

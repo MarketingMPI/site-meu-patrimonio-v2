@@ -988,6 +988,7 @@ p{margin:0}
 }
 @media(max-width:600px){
   :root{--shell:calc(100vw - 32px)}
+  .mark,.about-head h2 .mark,.close-title .ct-l1{white-space:normal}
   .offer-grid,.stats-grid,.benefits-grid,.method-steps,.stats-row,.eco-cards{grid-template-columns:1fr}
   .logo-strip{grid-template-columns:repeat(2,1fr)}
   .logo-strip li{border-top:1px solid var(--line);border-left:1px solid var(--line)}
@@ -1400,7 +1401,7 @@ p{margin:0}
 .mods-head .lead{margin-top:18px}
 .mods-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(7,1fr);gap:16px}
 .mod-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px;
-  aspect-ratio:1;padding:20px 12px;background:var(--mist);border:1px solid var(--line);
+  min-width:0;aspect-ratio:1;padding:20px 12px;background:var(--mist);border:1px solid var(--line);
   border-radius:20px;transition:transform .3s var(--ease),border-color .3s var(--ease),box-shadow .3s var(--ease)}
 .mod-tile:hover{transform:translateY(-4px);border-color:var(--slate);box-shadow:0 18px 40px color-mix(in oklab,var(--ink) 10%,transparent)}
 .mod-ico{display:grid;place-items:center;width:64px;height:64px;color:var(--forest)}

@@ -23,7 +23,6 @@ ROUTES = (
     ("/family-office/", Path("family-office/index.html")),
     ("/rede/", Path("rede/index.html")),
     ("/educacao/", Path("educacao/index.html")),
-    ("/glossario/", Path("glossario/index.html")),
     ("/quem-somos/", Path("quem-somos/index.html")),
 )
 
@@ -253,8 +252,8 @@ class SiteChecker:
             self.check_script(script, owners)
 
         # Ensure the declared route set stays explicit and complete.
-        if len(page_paths) != 8:
-            self.error("routes", "ROUTES", "expected exactly eight routes")
+        if len(page_paths) != 7:
+            self.error("routes", "ROUTES", "expected exactly seven routes")
 
         print(
             f"Checked {len(ROUTES)} routes and {self.checked_references} local references."
