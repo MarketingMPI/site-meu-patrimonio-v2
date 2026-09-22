@@ -24,7 +24,7 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python3 -m http.server 5000 --bind 0.0.0.0"
+args = "npm install && node server.js"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
@@ -39,5 +39,6 @@ path = "scripts/post-merge.sh"
 timeoutMs = 30000
 
 [deployment]
-deploymentTarget = "static"
-publicDir = "."
+deploymentTarget = "autoscale"
+build = ["npm", "install"]
+run = ["node", "server.js"]

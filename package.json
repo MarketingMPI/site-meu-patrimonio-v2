@@ -1,0 +1,16 @@
+{
+  "name": "site-meu-patrimonio-v2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site institucional unificado da Meu Patrimônio (Home + landing pages) com backend de captação da Rede (POST /api/application -> Pipedrive).",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
